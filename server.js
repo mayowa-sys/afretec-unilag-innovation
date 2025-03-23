@@ -1,14 +1,15 @@
-require('dotenv').config(); // Load environment variables from .env
+require('dotenv').config();
 const express = require('express');
+const cors = require('cors'); // Import CORS package
 const { MongoClient } = require('mongodb');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const uri = process.env.MONGODB_URI;
 
 const client = new MongoClient(uri, {
-    tls: true, // Enable TLS
-    tlsAllowInvalidCertificates: false, 
+    tls: true,
+    tlsAllowInvalidCertificates: false,
     retryWrites: true,
     w: 'majority',
 });
@@ -24,19 +25,20 @@ async function connectToMongoDB() {
 }
 connectToMongoDB();
 
+// Use CORS middleware
+app.use(cors({
+    origin: "*", // Allow all origins (not recommended for production)
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"]
+}));
+
 // Endpoint to fetch updates
 app.get('/api/updates', async (req, res) => {
     try {
-        const database = client.db('afretec-unilag'); 
-        const updatesCollection = database.collection('updates'); 
-
-        const updates = await updatesCollection
-            .find()
-            .sort({ date: -1 })
-            .limit(3) 
-            .toArray();
-
-        res.json(updates); 
+        const database = client.db('afretec-unilag');
+        const updatesCollection = database.collection('updates');
+        const updates = await updatesCollection.find().sort({ date: -1 }).limit(3).toArray();
+        res.json(updates);
     } catch (error) {
         console.error("Error fetching updates:", error);
         res.status(500).json({ error: "Failed to fetch updates" });
@@ -46,13 +48,10 @@ app.get('/api/updates', async (req, res) => {
 // Endpoint to fetch teams
 app.get('/api/teams', async (req, res) => {
     try {
-        const database = client.db('afretec-unilag'); 
-        const teamsCollection = database.collection('teams'); 
-
-        // Fetch all teams
+        const database = client.db('afretec-unilag');
+        const teamsCollection = database.collection('teams');
         const teams = await teamsCollection.find().toArray();
-
-        res.json(teams); 
+        res.json(teams);
     } catch (error) {
         console.error("Error fetching teams:", error);
         res.status(500).json({ error: "Failed to fetch teams" });

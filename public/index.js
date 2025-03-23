@@ -1,6 +1,6 @@
 document.addEventListener("scroll", function () {
     const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 50) { // Change background after 50px scroll
+    if (window.scrollY > 50) {
         navbar.classList.add("scrolled");
     } else {
         navbar.classList.remove("scrolled");
@@ -15,18 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to show a specific slide
     function showSlide(index) {
-        // Hide all slides
         slides.forEach((slide, i) => {
             slide.classList.remove("active", "prev");
             if (i < index) {
-                slide.classList.add("prev"); // Mark previous slides
+                slide.classList.add("prev");
             }
         });
-
-        // Show the current slide
         slides[index].classList.add("active");
-
-        // Update button states
         buttons.forEach((button, i) => {
             button.classList.toggle("active", i === index);
         });
@@ -40,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Start auto-sliding
     function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 6000); // Change slide every 5 seconds
+        autoSlideInterval = setInterval(nextSlide, 6000);
     }
 
     // Stop auto-sliding
@@ -77,10 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // Update button text
             if (card.classList.contains("expanded")) {
                 this.textContent = "Read Less";
-                description.style.maxHeight = description.scrollHeight + "px"; // Expand description
+                description.style.maxHeight = description.scrollHeight + "px";
             } else {
                 this.textContent = "Read More";
-                description.style.maxHeight = "100px"; // Collapse description
+                description.style.maxHeight = "100px";
             }
         });
     });
@@ -93,9 +88,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalDetails = document.getElementById("modal-details");
     const closeModal = document.querySelector(".close-modal");
 
+    // Dynamic backend URL
+    const backendUrl = window.location.origin;
+
     // Fetch updates from the backend
-    fetch("http://localhost:3000/api/updates")
-        .then((response) => response.json())
+    fetch(`${backendUrl}/api/updates`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
         .then((data) => {
             // Clear any existing content
             updatesGrid.innerHTML = "";
@@ -131,12 +134,15 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch((error) => {
             console.error("Error fetching updates:", error);
+            updatesGrid.innerHTML = "<p>Failed to load updates. Please try again later.</p>";
         });
 
+    // Close modal when the close button is clicked
     closeModal.addEventListener("click", function () {
         modal.style.display = "none";
     });
 
+    // Close modal when clicking outside the modal
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
             modal.style.display = "none";
@@ -154,9 +160,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalProjectStatus = document.getElementById("modal-project-status");
     const closeModal = document.querySelector(".close-modal");
 
+    // Dynamic backend URL
+    const backendUrl = window.location.origin;
+
     // Fetch teams from the backend
-    fetch("http://localhost:3000/api/teams")
-        .then((response) => response.json())
+    fetch(`${backendUrl}/api/teams`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
         .then((data) => {
             // Clear any existing content
             teamsRow.innerHTML = "";
@@ -164,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Loop through the teams and create cards
             data.forEach((team, index) => {
                 const colors = ["blue", "green", "yellow", "brown", "purple", "orange"];
-                const color = colors[index % colors.length]; // Cycle through colors
+                const color = colors[index % colors.length];
 
                 const card = document.createElement("div");
                 card.classList.add("col-md-4", "col-sm-6", "content-card");
@@ -198,6 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch((error) => {
             console.error("Error fetching teams:", error);
+            teamsRow.innerHTML = "<p>Failed to load teams. Please try again later.</p>";
         });
 
     // Close modal when the close button is clicked
