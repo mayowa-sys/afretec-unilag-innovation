@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeModal = document.querySelector(".close-modal");
 
     // Fetch updates from the backend
-    fetch("http://afretec-unilag.onrender.com/api/updates")
+    fetch("http://localhost:3000/api/updates")
         .then((response) => response.json())
         .then((data) => {
             // Clear any existing content
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeModal = document.querySelector(".close-modal");
 
     // Fetch teams from the backend
-    fetch("http://afretec-unilag.onrender.com/api/teams")
+    fetch("http://localhost:3000/api/teams")
         .then((response) => response.json())
         .then((data) => {
             // Clear any existing content
