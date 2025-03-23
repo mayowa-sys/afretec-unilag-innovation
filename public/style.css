@@ -630,6 +630,7 @@ header::before {
 .card {
     background: white;
     border-radius: 8px;
+    cursor: pointer;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
     overflow: hidden;
     position: relative;

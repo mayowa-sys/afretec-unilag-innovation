@@ -7,6 +7,30 @@ document.addEventListener("scroll", function () {
     }
 });
 
+// Close Navbar on Link Click
+document.addEventListener("DOMContentLoaded", function () {
+    const navbarLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+
+    // Close navbar when a link is clicked
+    navbarLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            if (navbarCollapse.classList.contains("show")) {
+                navbarToggler.click(); // Simulate a click on the toggler to close the navbar
+            }
+        });
+    });
+
+    // Close navbar when clicking outside the navbar
+    document.addEventListener("click", function (event) {
+        const isClickInsideNavbar = navbarCollapse.contains(event.target) || navbarToggler.contains(event.target);
+        if (!isClickInsideNavbar && navbarCollapse.classList.contains("show")) {
+            navbarToggler.click(); // Simulate a click on the toggler to close the navbar
+        }
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll(".slide");
     const buttons = document.querySelectorAll(".nav-button");
@@ -158,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalTeamVideo = document.getElementById("modal-team-video");
     const modalTeamMembers = document.getElementById("modal-team-members");
     const modalProjectStatus = document.getElementById("modal-project-status");
-    const closeModal = document.querySelector(".close-modal");
+    const closeModal = document.querySelector("#team-modal .close-modal"); // Fix: Use specific selector
 
     // Dynamic backend URL
     const backendUrl = window.location.origin;
@@ -204,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         .map((member) => `<li>${member.name} - ${member.role}</li>`)
                         .join("");
                     modalProjectStatus.textContent = team.projectStatus;
-                    teamModal.style.display = "flex";
+                    teamModal.style.display = "flex"; // Show the modal
                 });
 
                 teamsRow.appendChild(card);
@@ -217,13 +241,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Close modal when the close button is clicked
     closeModal.addEventListener("click", function () {
-        teamModal.style.display = "none";
+        teamModal.style.display = "none"; // Hide the modal
     });
 
     // Close modal when clicking outside the modal
     window.addEventListener("click", function (event) {
         if (event.target === teamModal) {
-            teamModal.style.display = "none";
+            teamModal.style.display = "none"; // Hide the modal
         }
     });
 });
