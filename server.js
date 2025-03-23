@@ -1,6 +1,7 @@
 require('dotenv').config(); // Load environment variables from .env
 const express = require('express');
 const { MongoClient } = require('mongodb');
+const cors = require('cors'); // Import the cors package
 const app = express();
 const port = 3000;
 
@@ -8,10 +9,13 @@ const uri = process.env.MONGODB_URI;
 
 const client = new MongoClient(uri, {
     tls: true, // Enable TLS
-    tlsAllowInvalidCertificates: false, 
+    tlsAllowInvalidCertificates: false,
     retryWrites: true,
     w: 'majority',
 });
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Connect to MongoDB
 async function connectToMongoDB() {
@@ -27,16 +31,16 @@ connectToMongoDB();
 // Endpoint to fetch updates
 app.get('/api/updates', async (req, res) => {
     try {
-        const database = client.db('afretec-unilag'); 
-        const updatesCollection = database.collection('updates'); 
+        const database = client.db('afretec-unilag');
+        const updatesCollection = database.collection('updates');
 
         const updates = await updatesCollection
             .find()
             .sort({ date: -1 })
-            .limit(3) 
+            .limit(3)
             .toArray();
 
-        res.json(updates); 
+        res.json(updates);
     } catch (error) {
         console.error("Error fetching updates:", error);
         res.status(500).json({ error: "Failed to fetch updates" });
@@ -46,13 +50,13 @@ app.get('/api/updates', async (req, res) => {
 // Endpoint to fetch teams
 app.get('/api/teams', async (req, res) => {
     try {
-        const database = client.db('afretec-unilag'); 
-        const teamsCollection = database.collection('teams'); 
+        const database = client.db('afretec-unilag');
+        const teamsCollection = database.collection('teams');
 
         // Fetch all teams
         const teams = await teamsCollection.find().toArray();
 
-        res.json(teams); 
+        res.json(teams);
     } catch (error) {
         console.error("Error fetching teams:", error);
         res.status(500).json({ error: "Failed to fetch teams" });

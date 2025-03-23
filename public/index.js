@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeModal = document.querySelector(".close-modal");
 
     // Fetch updates from the backend
-    fetch("http://localhost:3000/api/updates")
+    fetch("http://afretec-unilag.onrender.com/api/updates")
         .then((response) => response.json())
         .then((data) => {
             // Clear any existing content
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeModal = document.querySelector(".close-modal");
 
     // Fetch teams from the backend
-    fetch("http://localhost:3000/api/teams")
+    fetch("http://afretec-unilag.onrender.com/api/teams")
         .then((response) => response.json())
         .then((data) => {
             // Clear any existing content
@@ -210,63 +210,5 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target === teamModal) {
             teamModal.style.display = "none";
         }
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const managementGrid = document.querySelector("#members .members-group:nth-child(1) .members-grid");
-    const projectGrid = document.querySelector("#members .members-group:nth-child(2) .members-grid");
-    const webinarGrid = document.querySelector("#members .members-group:nth-child(3) .members-grid");
-
-    // Dummy Data
-    const managementTeam = [
-        { name: "Prof. Folasade Ogunsola", role: "Vice Chancellor", photo: "https://via.placeholder.com/120" },
-        { name: "Dr. John Doe", role: "Provost, College of Medicine", photo: "https://via.placeholder.com/120" }
-    ];
-
-    const projectTeam = [
-        { name: "Alice Johnson", role: "Project Lead", photo: "https://via.placeholder.com/120" },
-        { name: "Michael Brown", role: "Data Analyst", photo: "https://via.placeholder.com/120" },
-        { name: "Sarah Lee", role: "UI/UX Designer", photo: "https://via.placeholder.com/120" },
-        { name: "David Kim", role: "Backend Developer", photo: "https://via.placeholder.com/120" },
-        { name: "Emily Davis", role: "Frontend Developer", photo: "https://via.placeholder.com/120" },
-        { name: "James White", role: "QA Engineer", photo: "https://via.placeholder.com/120" }
-    ];
-
-    const webinarSpeakers = [
-        { name: "Dr. Jane Smith", role: "Health Tech Expert", photo: "https://via.placeholder.com/120" },
-        { name: "Dr. Robert Green", role: "AI in Healthcare", photo: "https://via.placeholder.com/120" },
-        { name: "Dr. Laura Martinez", role: "Telemedicine Specialist", photo: "https://via.placeholder.com/120" },
-        { name: "Dr. Daniel Brown", role: "Mental Health Advocate", photo: "https://via.placeholder.com/120" },
-        { name: "Dr. Sophia Lee", role: "Public Health Consultant", photo: "https://via.placeholder.com/120" }
-    ];
-
-    // Function to create a member card
-    function createMemberCard(member) {
-        const card = document.createElement("div");
-        card.classList.add("member-card");
-
-        card.innerHTML = `
-            <img src="${member.photo}" alt="${member.name}" class="member-photo">
-            <h3 class="member-name">${member.name}</h3>
-            <p class="member-role">${member.role}</p>
-        `;
-
-        return card;
-    }
-
-    // Populate Management Team
-    managementTeam.forEach((member) => {
-        managementGrid.appendChild(createMemberCard(member));
-    });
-
-    // Populate Project Team
-    projectTeam.forEach((member) => {
-        projectGrid.appendChild(createMemberCard(member));
-    });
-
-    // Populate Webinar Speakers
-    webinarSpeakers.forEach((member) => {
-        webinarGrid.appendChild(createMemberCard(member));
     });
 });
