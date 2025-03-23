@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afretec Innovation in Health Challenge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#overview">OVERVIEW</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#updates">UPDATES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#teams">TEAMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#organizers">ORGANIZERS</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <div class="hero-section">
+            <h3 class="hero-date">21/03 - 26/06</h3>
+            <h1 class="hero-title">AFRETEC-UNILAG</h1>
+            <h1 class="hero-subtitle">Innovation-in-Health Challenge 2025</h1>
+        </div>
+    
+        <!-- Logo Container -->
+        <div class="logo-container">
+            <div class="logo-item">
+                <img src="images/unilag-logo.png" alt="Company 1 Logo">
+            </div>
+            <div class="logo-item">
+                <img src="images/afretec.png" alt="Company 2 Logo">
+            </div>
+            <div class="logo-item">
+                <img src="images/cmul-logo.png" alt="Company 3 Logo">
+            </div>
+        </div>
+
+        <a href="#overview" class="scroll-down">
+            <i class="fa-solid fa-arrow-down"></i>
+        </a>
+    </header>
+    
+    <!-- Overview Section -->
+    <section id="overview" class="overview-section">
+        <div class="overview-container">
+            <!-- Image Half -->
+            <div class="overview-image">
+                <img src="images/overview.png" alt="Overview Image">
+            </div>
+    
+            <!-- Text Half with Carousel -->
+            <div class="overview-text">
+                <div class="carousel">
+                    <!-- Slide 1 -->
+                    <div class="slide active">
+                        <h2>CHALLENGE OVERVIEW</h2>
+                        <p>
+                            Are you a student innovator with groundbreaking ideas to transform healthcare in Africa? The <strong>AFRETEC-UNILAG Innovation-in-Health Challenge 2025</strong> is calling on multidisciplinary teams from Nigerian universities to develop scalable solutions for Africa’s most pressing healthcare challenges.
+                        </p>
+                        <p>
+                            <strong>Focus Areas</strong>: Digital Health & Telemedicine, Maternal & Child Health, AI & Data Analytics, Affordable Medical Devices, and Mental Health & Well-being.
+                        </p>
+                    </div>
+    
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <h2>Why Participate?</h2>
+                        <p>
+                            By joining the challenge, you stand to gain:
+                        </p>
+                        <ul>
+                            <li><strong>Proof of Concept Funding</strong>: Up to ₦500,000 for the Top 10 teams.</li>
+                            <li><strong>Mentorship</strong>: Guidance from industry health experts.</li>
+                            <li><strong>Cash Awards</strong>: Up to ₦4.5 million for the Top 3 innovations.</li>
+                            <li><strong>Industry Linkage</strong>: Opportunities to connect with leading healthcare organizations.</li>
+                        </ul>
+                        <p>
+                            <strong>Deadline</strong>: March 21, 2025. <strong>Apply Now</strong> and put your talent to work for Africa’s future.
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Carousel Navigation Buttons -->
+                <div class="carousel-nav">
+                    <button class="nav-button active" data-slide="0"></button>
+                    <button class="nav-button" data-slide="1"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updates Section -->
+    <section id="updates" class="updates-section">
+        <div class="updates-container">
+            <h2 class="section-title">
+                Latest Updates
+                <span>Stay Informed</span>
+            </h2>
+            <div class="updates-grid">
+            </div>
+        </div>
+    </section>
+
+    <div id="update-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-details"></p>
+        </div>
+    </div>
+
+    <!-- Teams Section -->
+    <section id="teams" class="teams-section">
+        <h2 class="section-title">
+            Shortlisted Teams
+            <span>Meet the Innovators</span>
+        </h2>
+        <div class="container bootstrap snippets bootdeys">
+            <div class="row">
+                <!-- Teams will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <div id="team-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-team-name"></h2>
+            <p id="modal-team-description"></p>
+            <div class="video-container">
+                <iframe id="modal-team-video" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>Team Members</h3>
+            <ul id="modal-team-members"></ul>
+            <p><strong>Project Status:</strong> <span id="modal-project-status"></span></p>
+        </div>
+    </div>
+    
+    <!-- Event Leadership Section -->
+    <!-- Event Leadership Section -->
+<section id="organizers" class="organizers-section py-5">
+    <div class="container">
+        <h2 class="section-title">
+            Challenge Organizers
+            <span>The People that made this possible</span>
+        </h2>
+
+        <!-- Management Team -->
+        <div class="row justify-content-center mb-5">
+            <h3 class="sub-section-title">
+                Management Team
+            </h3>
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="organizer-card">
+                    <div class="organizer-image">
+                        <img src="images/organizers/vc.jpeg" alt="Prof. Folasade Ogunsola">
+                    </div>
+                    <div class="organizer-details">
+                        <h5 class="organizer-name">Prof. Folasade Ogunsola</h5>
+                        <p class="organizer-role">Vice Chancellor</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="organizer-card">
+                    <div class="organizer-image">
+                        <img src="images/organizers/vc.jpeg" alt="Dr. John Doe">
+                    </div>
+                    <div class="organizer-details">
+                        <h5 class="organizer-name">Dr. John Doe</h5>
+                        <p class="organizer-role">Provost, College of Medicine</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Team Members -->
+        <div class="row justify-content-center mb-5">
+            <h3 class="sub-section-title">
+                Project Team Members
+            </h3>
+            <!-- Team Member 1 -->
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="organizer-card">
+                    <div class="organizer-image">
+                        <img src="images/organizers/akinboboye.jpeg" alt="Dr B.O. Akinboboye">
+                    </div>
+                    <div class="organizer-details">
+                        <h5 class="organizer-name">Dr B.O. Akinboboye</h5>
+                        <p class="organizer-role">Dental Sciences Faculty Rep, AFRETEC-UNILAG Innovation in Health Challenge</p>
+                        <a href="https://www.linkedin.com/in/bolanle-akinboboye-2a3b4a49" target="_blank" class="linkedin-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="organizer-card">
+                    <div class="organizer-image">
+                        <img src="images/organizers/francisca.jpeg" alt="Prof. Francisca O. Nwaokorie">
+                    </div>
+                    <div class="organizer-details">
+                        <h5 class="organizer-name">Prof. Francisca O. Nwaokorie</h5>
+                        <p class="organizer-role">Basic Medical Science Faculty Rep, AFRETEC-UNILAG Innovation in Health Challenge</p>
+                        <a href="https://www.linkedin.com/in/francisca-nwaokorie-4a78a31b3/" target="_blank" class="linkedin-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="organizer-card">
+                    <div class="organizer-image">
+                        <img src="images/organizers/vc.jpeg" alt="Abdurrahman Balogun">
+                    </div>
+                    <div class="organizer-details">
+                        <h5 class="organizer-name">Abdurrahman Balogun</h5>
+                        <p class="organizer-role">IT support</p>
+                        <a href="https://www.linkedin.com/in/example" target="_blank" class="linkedin-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Team Member 4 -->
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="organizer-card">
+                    <div class="organizer-image">
+                        <img src="images/organizers/yinusa.jpeg" alt="Ahmed Yinusa">
+                    </div>
+                    <div class="organizer-details">
+                        <h5 class="organizer-name">Ahmed Yinusa</h5>
+                        <p class="organizer-role">IT support</p>
+                        <a href="https://www.linkedin.com/in/ahmed-yinusa-b94b61a2" target="_blank" class="linkedin-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more team members here as needed -->
+        </div>
+
+        <!-- Webinar Speakers -->
+        <div class="row justify-content-center">
+            <h3 class="sub-section-title">
+                Webinar Speakers
+            </h3>
+            <!-- Speaker 1 -->
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="organizer-card">
+                    <div class="organizer-image">
+                        <img src="images/organizers/vc.jpeg" alt="Dr. Jane Smith">
+                    </div>
+                    <div class="organizer-details">
+                        <h5 class="organizer-name">Dr. Jane Smith</h5>
+                        <p class="organizer-role">Health Tech Expert</p>
+                        <a href="https://www.linkedin.com/in/example" target="_blank" class="linkedin-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Speaker 2 -->
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="organizer-card">
+                    <div class="organizer-image">
+                        <img src="images/organizers/vc.jpeg" alt="Dr. Robert Green">
+                    </div>
+                    <div class="organizer-details">
+                        <h5 class="organizer-name">Dr. Robert Green</h5>
+                        <p class="organizer-role">AI in Healthcare</p>
+                        <a href="https://www.linkedin.com/in/example" target="_blank" class="linkedin-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Speaker 3 -->
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="organizer-card">
+                    <div class="organizer-image">
+                        <img src="images/organizers/vc.jpeg" alt="Dr. Laura Martinez">
+                    </div>
+                    <div class="organizer-details">
+                        <h5 class="organizer-name">Dr. Laura Martinez</h5>
+                        <p class="organizer-role">Telemedicine Specialist</p>
+                        <a href="https://www.linkedin.com/in/example" target="_blank" class="linkedin-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/fa8e423f7a.js" crossorigin="anonymous"></script>
+</body>
+</html>
