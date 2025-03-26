@@ -21,56 +21,36 @@ body {
 }
 
 /* Header */
-/* ====== ENHANCED HEADER WITH IPHONE FIXES ====== */
 header {
     height: 100vh;
-    min-height: -webkit-fill-available; /* Critical for mobile viewport */
-    position: relative;
-    overflow: hidden;
+    background-image: url('images/header-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    isolation: isolate; /* New: Creates stacking context */
+    position: relative;
 }
 
-/* ----- Fixed Background Solution (Works on iOS) ----- */
-header::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/header-bg.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-    
-    /* GPU Acceleration & Anti-Blur */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    will-change: transform; /* Optimizes animations */
-    
-    /* Smooth Loading */
-    background-color: #000; /* Fallback color */
-    background-blend-mode: overlay;
+@supports (-webkit-touch-callout: none) {
+    header {
+        background-attachment: scroll;
+    }
 }
 
-/* ----- Dark Overlay (Now Fixed Position) ----- */
+
+/* Dark Overlay */
 header::before {
     content: '';
-    position: fixed; /* Changed from absolute */
+    position: absolute;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 0;
-    pointer-events: none; /* Allows clicks through overlay */
+    z-index: 1;
 }
 
-/* ====== HERO CONTENT (UNCHANGED BUT OPTIMIZED) ====== */
+/* Hero Section */
 .hero-section {
     text-align: center;
     color: white;
@@ -78,99 +58,91 @@ header::before {
     max-width: 900px;
     width: 90%;
     position: relative;
-    z-index: 1;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Better readability */
+    z-index: 2;
 }
 
 .hero-date {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-size: clamp(2rem, 3vw, 1.5rem);
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    animation: fadeInDown 1s ease-out;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-out; /* Animation */
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-size: clamp(2.2rem, 7vw, 4.5rem);
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 15px;
     color: #ffffff;
     line-height: 1.1;
-    letter-spacing: 2px;
-    animation: fadeInUp 0.8s ease-out;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 15px;
+    animation: fadeInUp 1s ease-out; /* Animation */
 }
+
 
 .hero-subtitle {
-    font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+    color: white;
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
     font-weight: 400;
     text-transform: uppercase;
-    margin-bottom: 25px;
-    animation: fadeInUp 1s ease-out 0.2s;
-    opacity: 0.9;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out; /* Animation */
 }
 
-.hero-description {
-    animation: fadeInUp 1s ease-out 0.4s;
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-    max-width: 80%;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* ====== RETINA & MOBILE OPTIMIZATIONS ====== */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
-    header::after {
-        background-image: url('images/header-bg@2x.jpg');
-    }
+.hero-description{
+    animation: fadeInUp 1s ease-out;
+    font-size: 10px;
 }
 
 @media (max-width: 768px) {
     header {
-        height: 80vh; /* More balanced mobile height */
-        min-height: 600px;
+        height: 70vh; /* Slightly taller for better balance */
+        min-height: 500px;
+        padding: 20px;
+        display: flex;
+        background-position: right 40% cover;
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
-    
-    header::after {
-        background-attachment: scroll;
-        background-position: center 35%;
-    }
-    
-    /* Enhanced mobile overlay */
-    header::before {
-        background: linear-gradient(to bottom, 
-                   rgba(0,0,0,0.6) 0%, 
-                   rgba(0,0,0,0.4) 100%);
-    }
-    
-    .hero-section {
-        margin-top: 0;
-        padding: 0 25px;
-    }
-    
-    .hero-title {
-        font-size: 2.8rem;
-        margin-bottom: 20px;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.8rem;
-    }
-    
-    .hero-description {
-        font-size: 1.1rem;
-        max-width: 95%;
-    }
-}
 
-/* Safari 15+ Specific Fix */
-@supports (-webkit-touch-callout: none) and (not (translate: none)) {
-    header::after {
-        height: 100lvh;
+    .hero-section {
+        width: 100%;
+        padding: 0 20px;
+        margin-top: -40px; /* Slight upward adjustment */
     }
-}
+  
+    .hero-title {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+  
+    .hero-description {
+      font-size: 1rem;
+      max-width: 90%;
+      margin: 10px auto 0;
+    }
+  
+    .scroll-down {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      bottom: 15px;
+    }
+  }
+  
+
 /* Animations */
 @keyframes fadeInDown {
     0% {
