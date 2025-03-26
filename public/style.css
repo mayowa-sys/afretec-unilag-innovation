@@ -431,7 +431,7 @@ width: auto;
     position: relative;
     overflow: hidden;
     flex: 1; /* Take up remaining space */
-    min-height: 300px; /* Ensure carousel has a minimum height */
+    min-height: 550px; /* Ensure carousel has a minimum height */
 }
 
 .slide {
@@ -480,7 +480,6 @@ width: auto;
     color: #666;
     line-height: 1.6;
     font-family: "Georgia", serif; /* Serif font for body text */
-    font-style: italic; /* Italicized text */
 }
 
 /* Carousel Navigation Buttons */
@@ -526,7 +525,7 @@ width: auto;
 
     .carousel {
         height: auto; /* Allow carousel to expand based on content */
-        min-height: 400px; /* Ensure carousel has a minimum height on mobile */
+        min-height: 550px; /* Ensure carousel has a minimum height on mobile */
     }
 
     .slide {
