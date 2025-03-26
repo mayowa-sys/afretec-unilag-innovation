@@ -98,6 +98,8 @@ header::before {
         min-height: 500px;
         padding: 20px;
         display: flex;
+        background-position: right 40% cover;
+        background-size: cover;
         justify-content: center;
         align-items: center;
         text-align: center;
