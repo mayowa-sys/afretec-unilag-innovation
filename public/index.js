@@ -251,3 +251,45 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// Speaker Modal Functionality
+document.addEventListener("DOMContentLoaded", function() {
+    const speakerCards = document.querySelectorAll('.speaker-card');
+    const speakerModal = document.getElementById('speaker-modal');
+    const closeModal = speakerModal.querySelector('.close-modal');
+    
+    // Add click event to each speaker card
+    speakerCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const name = this.querySelector('.organizer-name').textContent;
+            const role = this.querySelector('.organizer-role').textContent;
+            const flyer = this.getAttribute('data-flyer');
+            const bio = this.querySelector('.speaker-bio').innerHTML;
+            
+            // Populate modal
+            document.getElementById('speaker-modal-name').textContent = name;
+            document.getElementById('speaker-modal-role').textContent = role;
+            document.getElementById('speaker-flyer').src = flyer;
+            document.getElementById('speaker-flyer').alt = `${name} Event Flyer`;
+            document.getElementById('speaker-modal-bio').innerHTML = bio;
+            
+            // Show modal
+            speakerModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close modal
+    closeModal.addEventListener('click', function() {
+        speakerModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+
+    // Close when clicking outside modal
+    window.addEventListener('click', function(e) {
+        if (e.target === speakerModal) {
+            speakerModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
