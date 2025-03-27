@@ -174,83 +174,83 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const teamsRow = document.querySelector(".row");
-    const teamModal = document.getElementById("team-modal");
-    const modalTeamName = document.getElementById("modal-team-name");
-    const modalTeamDescription = document.getElementById("modal-team-description");
-    const modalTeamVideo = document.getElementById("modal-team-video");
-    const modalTeamMembers = document.getElementById("modal-team-members");
-    const modalProjectStatus = document.getElementById("modal-project-status");
-    const closeModal = document.querySelector("#team-modal .close-modal"); // Fix: Use specific selector
+// document.addEventListener("DOMContentLoaded", function () {
+//     const teamsRow = document.querySelector(".row");
+//     const teamModal = document.getElementById("team-modal");
+//     const modalTeamName = document.getElementById("modal-team-name");
+//     const modalTeamDescription = document.getElementById("modal-team-description");
+//     const modalTeamVideo = document.getElementById("modal-team-video");
+//     const modalTeamMembers = document.getElementById("modal-team-members");
+//     const modalProjectStatus = document.getElementById("modal-project-status");
+//     const closeModal = document.querySelector("#team-modal .close-modal"); // Fix: Use specific selector
 
-    // Dynamic backend URL
-    const backendUrl = window.location.origin;
+//     // Dynamic backend URL
+//     const backendUrl = window.location.origin;
 
-    // Fetch teams from the backend
-    fetch(`${backendUrl}/api/teams`)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return response.json();
-        })
-        .then((data) => {
-            // Clear any existing content
-            teamsRow.innerHTML = "";
+//     // Fetch teams from the backend
+//     fetch(`${backendUrl}/api/teams`)
+//         .then((response) => {
+//             if (!response.ok) {
+//                 throw new Error("Network response was not ok");
+//             }
+//             return response.json();
+//         })
+//         .then((data) => {
+//             // Clear any existing content
+//             teamsRow.innerHTML = "";
 
-            // Loop through the teams and create cards
-            data.forEach((team, index) => {
-                const colors = ["blue", "green", "yellow", "brown", "purple", "orange"];
-                const color = colors[index % colors.length];
+//             // Loop through the teams and create cards
+//             data.forEach((team, index) => {
+//                 const colors = ["blue", "green", "yellow", "brown", "purple", "orange"];
+//                 const color = colors[index % colors.length];
 
-                const card = document.createElement("div");
-                card.classList.add("col-md-4", "col-sm-6", "content-card");
+//                 const card = document.createElement("div");
+//                 card.classList.add("col-md-4", "col-sm-6", "content-card");
 
-                card.innerHTML = `
-                    <div class="card-big-shadow">
-                        <div class="card card-just-text" data-background="color" data-color="${color}" data-radius="none">
-                            <div class="content">
-                                <h6 class="category">Team ${index + 1}</h6>
-                                <h4 class="title">${team.teamName}</h4>
-                                <p class="description">${team.shortDescription}</p>
-                            </div>
-                        </div>
-                    </div>
-                `;
+//                 card.innerHTML = `
+//                     <div class="card-big-shadow">
+//                         <div class="card card-just-text" data-background="color" data-color="${color}" data-radius="none">
+//                             <div class="content">
+//                                 <h6 class="category">Team ${index + 1}</h6>
+//                                 <h4 class="title">${team.teamName}</h4>
+//                                 <p class="description">${team.shortDescription}</p>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 `;
 
-                // Add click event to open modal
-                card.addEventListener("click", () => {
-                    modalTeamName.textContent = team.teamName;
-                    modalTeamDescription.textContent = team.fullDescription;
-                    modalTeamVideo.src = team.videoUrl;
-                    modalTeamMembers.innerHTML = team.members
-                        .map((member) => `<li>${member.name} - ${member.role}</li>`)
-                        .join("");
-                    modalProjectStatus.textContent = team.projectStatus;
-                    teamModal.style.display = "flex"; // Show the modal
-                });
+//                 // Add click event to open modal
+//                 card.addEventListener("click", () => {
+//                     modalTeamName.textContent = team.teamName;
+//                     modalTeamDescription.textContent = team.fullDescription;
+//                     modalTeamVideo.src = team.videoUrl;
+//                     modalTeamMembers.innerHTML = team.members
+//                         .map((member) => `<li>${member.name} - ${member.role}</li>`)
+//                         .join("");
+//                     modalProjectStatus.textContent = team.projectStatus;
+//                     teamModal.style.display = "flex"; // Show the modal
+//                 });
 
-                teamsRow.appendChild(card);
-            });
-        })
-        .catch((error) => {
-            console.error("Error fetching teams:", error);
-            teamsRow.innerHTML = "<p>Failed to load teams. Please try again later.</p>";
-        });
+//                 teamsRow.appendChild(card);
+//             });
+//         })
+//         .catch((error) => {
+//             console.error("Error fetching teams:", error);
+//             teamsRow.innerHTML = "<p>Failed to load teams. Please try again later.</p>";
+//         });
 
-    // Close modal when the close button is clicked
-    closeModal.addEventListener("click", function () {
-        teamModal.style.display = "none"; // Hide the modal
-    });
+//     // Close modal when the close button is clicked
+//     closeModal.addEventListener("click", function () {
+//         teamModal.style.display = "none"; // Hide the modal
+//     });
 
-    // Close modal when clicking outside the modal
-    window.addEventListener("click", function (event) {
-        if (event.target === teamModal) {
-            teamModal.style.display = "none"; // Hide the modal
-        }
-    });
-});
+//     // Close modal when clicking outside the modal
+//     window.addEventListener("click", function (event) {
+//         if (event.target === teamModal) {
+//             teamModal.style.display = "none"; // Hide the modal
+//         }
+//     });
+// });
 
 // Speaker Modal Functionality
 document.addEventListener("DOMContentLoaded", function() {
