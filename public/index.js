@@ -293,3 +293,72 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('videoModal');
+    const youtubeContainer = document.getElementById('youtubeContainer');
+    const videoTitle = document.getElementById('videoTitle');
+    const videoDescription = document.getElementById('videoDescription');
+    const closeVideo = document.querySelector('.close-video-modal');
+    
+    // Open modal with YouTube video
+    document.querySelectorAll('.video-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const videoId = this.getAttribute('data-ytid');
+            const title = this.getAttribute('data-title');
+            const desc = this.getAttribute('data-description');
+            const start = this.getAttribute('data-start') || 0;
+            const end = this.getAttribute('data-end');
+            
+            // Create YouTube embed URL with timestamps
+            let embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&start=${start}`;
+
+            if (end) {
+                embedUrl += `&end=${end}`;
+            }
+            
+            // Set iframe source
+            youtubeContainer.innerHTML = `<iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            
+            // Set title and description
+            videoTitle.textContent = title;
+            videoDescription.textContent = desc;
+            
+            // Show modal
+            modal.style.display = 'flex';
+        });
+    });
+    
+    // Close modal
+    closeVideo.addEventListener('click', () => {
+        modal.style.display = 'none';
+        youtubeContainer.innerHTML = ''; // This stops the video
+    });
+    
+    // Close when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            youtubeContainer.innerHTML = '';
+        }
+    });
+    
+    // Seminar group toggle
+    document.querySelectorAll('.seminar-header').forEach(header => {
+        header.addEventListener('click', function() {
+            const group = this.parentElement;
+            const isActive = group.classList.contains('active');
+            const videoGrid = this.nextElementSibling;
+            
+            if (isActive) {
+                group.classList.remove('active');
+                videoGrid.style.display = 'none';
+            } else {
+                group.classList.add('active');
+                videoGrid.style.display = 'grid';
+            }
+        });
+    });
+});
+
+
