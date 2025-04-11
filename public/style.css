@@ -698,6 +698,12 @@ width: auto;
     position: relative;
 }
 
+#modal-title{
+    margin-bottom: 10px;
+}
+
+
+
 .close-modal {
     position: absolute;
     top: 10px;
@@ -735,33 +741,10 @@ width: auto;
     }
 }
 /* Teams Section */
-/* Teams Section Updates */
 .teams-section {
     padding: 80px 0;
     background: #f9f9f9;
-    text-align: center; /* Center the message */
-}
-
-.coming-soon-message {
-    background: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 40px auto;
-}
-
-.coming-soon-message p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
-
-.coming-soon-message p:first-child {
-    font-weight: 500;
-    color: #333;
-    font-size: 1.4rem;
+    text-align: center;
 }
 
 .container {
@@ -915,74 +898,98 @@ width: auto;
 
 /* Modal Header */
 #modal-team-name {
-    font-size: 2rem;
+    /* Typography */
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #222;
-    margin-bottom: 15px;
-    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    
+    /* Color & Effects */
+    color: #2c3e50;
+    background: linear-gradient(90deg, #3498db, #9b59b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    
+    /* Spacing & Decoration */
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    
+    /* Animation */
+    transition: all 0.3s ease;
+}
+
+/* Underline effect */
+#modal-team-name::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #9b59b6);
+    border-radius: 3px;
+}
+
+/* Hover effects */
+.modal-content:hover #modal-team-name {
+    letter-spacing: 0px;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #modal-team-name {
+        font-size: 2rem;
+    }
 }
 
 /* Modal Description */
-#modal-team-description {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* Video Container */
-.video-container {
-    position: relative;
-    padding-bottom: 40%; /* Adjust aspect ratio for a smaller video */
-    height: 0;
-    overflow: hidden;
-    margin: 20px 0;
-    border-radius: 10px;
-    background-color: #f1f1f1; /* Light gray background for video placeholder */
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 10px;
-}
-
-/* Team Members Section */
-#modal-team-members {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
-}
-
-#modal-team-members li {
-    font-size: 0.95rem;
+#modal-team-description, #modal-details {
+    /* Typography */
+    font-size: 1.1rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
     color: #444;
-    margin-bottom: 8px;
-    padding-left: 20px;
-    position: relative;
+    
+    /* Layout & Spacing */
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+    padding: 0 15px;
+    
+    /* Readability Enhancements */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Paragraph styling */
+    text-align: left;
+    word-spacing: 0.05em;
 }
 
-#modal-team-members li::before {
-    content: "•";
-    color: #0096FF; /* Accent color for bullet points */
-    font-size: 1.2rem;
-    position: absolute;
-    left: 0;
-    top: -2px;
+/* First paragraph enhancement */
+#modal-team-description p:first-child {
+    margin-top: 0;
 }
 
-/* Project Status */
-#modal-project-status {
-    font-weight: 600;
-    color: #0096FF; /* Accent color */
-    font-size: 1rem;
-    margin-top: 10px;
+/* Last paragraph enhancement */
+#modal-team-description p:last-child {
+    margin-bottom: 0;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #modal-team-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        padding: 0 10px;
+    }
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .modal-content {
@@ -998,17 +1005,7 @@ width: auto;
         font-size: 0.95rem;
     }
 
-    #modal-team-members li {
-        font-size: 0.9rem;
-    }
-
-    #modal-project-status {
-        font-size: 0.95rem;
-    }
-
-    .video-container {
-        padding-bottom: 50%; /* Adjust video height for smaller screens */
-    }
+    
 }
 
 
