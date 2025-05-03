@@ -215,7 +215,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 `;
 
-                // Add click event to open modal (simplified to only show name and description)
                 card.addEventListener("click", () => {
                     modalTeamName.textContent = team.teamName;
                     modalTeamDescription.textContent = team.fullDescription;
@@ -334,22 +333,81 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Seminar group toggle
+    // Seminar group toggle with animation and single-open behavior
     document.querySelectorAll('.seminar-header').forEach(header => {
         header.addEventListener('click', function() {
             const group = this.parentElement;
-            const isActive = group.classList.contains('active');
             const videoGrid = this.nextElementSibling;
             
-            if (isActive) {
-                group.classList.remove('active');
-                videoGrid.style.display = 'none';
-            } else {
-                group.classList.add('active');
-                videoGrid.style.display = 'grid';
+            // If this group is already active, close it
+            if (group.classList.contains('active')) {
+                slideUp(videoGrid, () => {
+                    group.classList.remove('active');
+                });
+                return;
             }
+            
+            // Close all other open groups first
+            document.querySelectorAll('.seminar-group.active').forEach(activeGroup => {
+                if (activeGroup !== group) {
+                    const activeVideoGrid = activeGroup.querySelector('.video-grid');
+                    activeGroup.classList.remove('active');
+                    slideUp(activeVideoGrid);
+                }
+            });
+            
+            // Open this group
+            group.classList.add('active');
+            slideDown(videoGrid);
         });
     });
+    
+    // Animation functions
+    function slideDown(element, callback) {
+        element.style.display = 'grid';
+        element.style.overflow = 'hidden';
+        element.style.maxHeight = '0';
+        element.style.transition = 'max-height 0.4s ease, opacity 0.3s ease';
+        element.style.opacity = '0';
+        
+        // Trigger reflow to apply initial styles
+        void element.offsetHeight;
+        
+        element.style.maxHeight = element.scrollHeight + 'px';
+        element.style.opacity = '1';
+        
+        const onTransitionEnd = () => {
+            element.removeEventListener('transitionend', onTransitionEnd);
+            element.style.maxHeight = '';
+            element.style.overflow = '';
+            if (callback) callback();
+        };
+        
+        element.addEventListener('transitionend', onTransitionEnd);
+    }
+    
+    function slideUp(element, callback) {
+        element.style.overflow = 'hidden';
+        element.style.maxHeight = element.scrollHeight + 'px';
+        element.style.transition = 'max-height 0.4s ease, opacity 0.3s ease';
+        
+        // Trigger reflow to apply initial styles
+        void element.offsetHeight;
+        
+        element.style.maxHeight = '0';
+        element.style.opacity = '0';
+        
+        const onTransitionEnd = () => {
+            element.removeEventListener('transitionend', onTransitionEnd);
+            element.style.display = 'none';
+            element.style.maxHeight = '';
+            element.style.overflow = '';
+            element.style.opacity = '';
+            if (callback) callback();
+        };
+        
+        element.addEventListener('transitionend', onTransitionEnd);
+    }
 });
 
 
