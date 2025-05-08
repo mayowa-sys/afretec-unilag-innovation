@@ -193,10 +193,8 @@ document.addEventListener("DOMContentLoaded", function () {
             return response.json();
         })
         .then((data) => {
-            // Clear any existing content
             teamsRow.innerHTML = "";
 
-            // Loop through the teams and create cards
             data.forEach((team, index) => {
                 const colors = ["blue", "green", "yellow", "brown", "purple", "orange"];
                 const color = colors[index % colors.length];
@@ -218,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 card.addEventListener("click", () => {
                     modalTeamName.textContent = team.teamName;
                     modalTeamDescription.textContent = team.fullDescription;
-                    teamModal.style.display = "flex"; // Show the modal
+                    teamModal.style.display = "flex"; 
                 });
 
                 teamsRow.appendChild(card);
@@ -229,12 +227,10 @@ document.addEventListener("DOMContentLoaded", function () {
             teamsRow.innerHTML = "<p>Failed to load teams. Please try again later.</p>";
         });
 
-    // Close modal when the close button is clicked
     closeModal.addEventListener("click", function () {
         teamModal.style.display = "none";
     });
 
-    // Close modal when clicking outside the modal
     window.addEventListener("click", function (event) {
         if (event.target === teamModal) {
             teamModal.style.display = "none";

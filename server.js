@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const cors = require('cors'); // Import CORS package
+const cors = require('cors'); 
 const { MongoClient } = require('mongodb');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -27,7 +27,7 @@ connectToMongoDB();
 
 // Use CORS middleware
 app.use(cors({
-    origin: "*", // Allow all origins (not recommended for production)
+    origin: "*", 
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"]
 }));
