@@ -306,7 +306,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Set iframe source
             youtubeContainer.innerHTML = `<iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
             
-            // Set title and description
             videoTitle.textContent = title;
             videoDescription.textContent = desc;
             
