@@ -537,7 +537,6 @@ width: auto;
     .carousel {
         height: auto; /* Allow carousel to expand based on content */
         min-height: 600px; /* Ensure carousel has a minimum height on mobile */
-        border: 1px solid red;
     }
 
     .slide {
@@ -2099,8 +2098,8 @@ width: auto;
         left: 0;
         width: 100%;
         background-color: #0059a0;
-        padding: 5px 10px;
-        font-size: 0.7rem;
+        padding: 15px 10px;
+        font-size: 0.9rem;
         z-index: 1050;
         border-top: 1px solid rgba(255, 255, 255, 0.2);
         box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
@@ -2114,22 +2113,22 @@ width: auto;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         line-height: 1;
         padding: 0;
     }
 
     .countdown-icon {
-        font-size: 1rem;
+        font-size: 1.2rem;
         animation: none; /* disable pulse to reduce movement */
     }
 
     .countdown-text {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
 
     .countdown-timer {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         padding: 2px 6px;
         background: rgba(255,255,255,0.1);
         border-radius: 4px;
