@@ -268,6 +268,7 @@ width: auto;
 /* Navbar */
 .navbar {
     transition: background-color 0.3s ease;
+    padding-bottom: 0 !important;
 }
 
 /* Navbar - Desktop */
@@ -432,7 +433,7 @@ width: auto;
     position: relative;
     overflow: hidden;
     flex: 1; /* Take up remaining space */
-    min-height: 550px; /* Ensure carousel has a minimum height */
+    min-height: 600px; /* Ensure carousel has a minimum height */
 }
 
 .slide {
@@ -522,8 +523,8 @@ width: auto;
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .overview-container {
-        flex-direction: column; /* Stack vertically on mobile */
-        gap: 20px; /* Reduce gap between stacked items */
+        flex-direction: column; 
+        gap: 20px; 
     }
 
     .overview-text {
@@ -535,7 +536,8 @@ width: auto;
 
     .carousel {
         height: auto; /* Allow carousel to expand based on content */
-        min-height: 550px; /* Ensure carousel has a minimum height on mobile */
+        min-height: 600px; /* Ensure carousel has a minimum height on mobile */
+        border: 1px solid red;
     }
 
     .slide {
@@ -1783,5 +1785,367 @@ width: auto;
         top: 10px;
         right: 10px;
         font-size: 24px;
+    }
+}
+
+.flyer-section {
+    background: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.finale-flyer {
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    max-width: 80%;
+    height: auto;
+    border: 1px solid #dee2e6;
+}
+
+.hover-zoom {
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.02);
+}
+
+.flyer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-lightbox:hover {
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .finale-flyer {
+        max-width: 95%;
+    }
+    
+    .flyer-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.finale-details {
+    padding: 2rem 0;
+    background-color: #f8f9fa;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.universities-card,
+.judges-card {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.detail-header {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.detail-header i {
+    color: #3498db;
+}
+
+.university-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+}
+
+.uni-item {
+    padding: 0.75rem;
+    background: white;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.uni-item span {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+/* Judges Card */
+.judges-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.judge-item {
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border-left: 3px solid #3498db;
+}
+
+.judge-item h4 {
+    color: #2c3e50;
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+}
+
+.judge-item p {
+    color: #7f8c8d;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Speaker Card */
+.finale-speaker-card {
+    background: linear-gradient(135deg, #f5f9ff 0%, #e6f0fa 100%);
+    border-radius: 10px;
+    max-width: 70%;
+    margin: auto;
+    padding: 1.5rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    border-top: 3px solid #e74c3c;
+}
+
+.speaker-content h4 {
+    color: #2c3e50;
+    margin: 0.5rem 0 0.25rem 0;
+}
+
+.speaker-org {
+    color: #7f8c8d;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.speaker-topic {
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.topic-label {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-right: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .university-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .university-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .detail-header {
+        font-size: 1.1rem;
+    }
+}
+/* 
+/* Countdown Bar Styles */
+.countdown-container {
+    background-color: #0059a0;
+    color: white;
+    width: 100%;
+    padding: 12px 0;
+    margin-bottom: 0 !important;
+    z-index: 1000;
+}
+
+.countdown-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.countdown-link:hover {
+    transform: scale(1.02);
+    text-decoration: none;
+    color: white;
+}
+
+.countdown-icon {
+    font-size: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+.countdown-text {
+    font-size: 1rem;
+}
+
+.countdown-timer {
+    font-size: 1.2rem;
+    font-family: 'Courier New', monospace;
+    background: rgba(0,0,0,0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.countdown-timer span {
+    display: inline-block;
+    min-width: 30px;
+    text-align: center;
+}
+
+.countdown-cta {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .countdown-link {
+        flex-wrap: wrap;
+        gap: 5px;
+        font-size: 0.8rem;
+    }
+    
+    .countdown-timer {
+        font-size: 1rem;
+        margin: 0 5px;
+    }
+    
+    .countdown-timer span {
+        min-width: 20px;
+    }
+} 
+
+.timer{
+    display: flex;
+    min-width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .countdown-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #0059a0;
+        padding: 5px 10px;
+        font-size: 0.7rem;
+        z-index: 1050;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .countdown-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.7rem;
+        line-height: 1;
+        padding: 0;
+    }
+
+    .countdown-icon {
+        font-size: 1rem;
+        animation: none; /* disable pulse to reduce movement */
+    }
+
+    .countdown-text {
+        font-size: 0.7rem;
+    }
+
+    .countdown-timer {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 4px;
+        margin: 0;
+    }
+
+    .countdown-timer span {
+        min-width: auto;
+    }
+
+    .countdown-cta {
+        display: none;;
+    }
+
+    .timer {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
     }
 }

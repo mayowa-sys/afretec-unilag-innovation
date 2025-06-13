@@ -405,4 +405,51 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.querySelector('.click-to-enlarge').addEventListener('click', function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = this.src;
+    lightbox.style.display = 'flex';
+});
+
+document.querySelector('.close-lightbox').addEventListener('click', function() {
+    document.getElementById('lightbox').style.display = 'none';
+});
+
+// Countdown to June 25, 2025 10:00 AM (WAT)
+function updateCountdown() {
+    const finaleDate = new Date('June 25, 2025 10:00:00 GMT+0100');
+    const now = new Date();
+    const diff = finaleDate - now;
+
+    if (diff <= 0) {
+        document.getElementById('countdown-bar').innerHTML = `
+            <div class="container text-center py-2">
+                <strong>THE GRAND FINALE IS HAPPENING NOW!</strong> 
+                <a href="#grand-finale" class="text-white">Click to view details →</a>
+            </div>
+        `;
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('days').textContent = days.toString().padStart(2, '0');
+    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+}
+
+// Update every second
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Make the whole bar clickable
+document.getElementById('countdown-bar').addEventListener('click', function() {
+    window.location.href = '#grand-finale';
+});
+
 
