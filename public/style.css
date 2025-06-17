@@ -1078,98 +1078,12 @@ width: auto;
     line-height: 1.6;
     padding: 0 20px;
 }
-
-.institutions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 30px;
-    padding: 20px;
-    justify-items: center;
-    max-width: 1200px;
+.institutions-flyer{
     margin: 0 auto;
-}
-
-.institution-logo {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease;
-    width: 100%;
 }
-
-.institution-logo:hover {
-    transform: translateY(-5px);
-}
-
-.institution-logo img {
-    height: 80px;
-    width: auto;
-    margin-bottom: 10px;
-    object-fit: contain;
-    opacity: 0.95;
-    transition: all 0.3s ease;
-}
-
-.institution-logo:hover img {
-    opacity: 1;
-}
-
-.institution-logo span {
-    font-size: 0.85rem;
-    text-align: center;
-    color: #333;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
-    .institutions-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 25px;
-    }
-}
-
-@media (max-width: 768px) {
-    .institutions-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 20px;
-    }
-    
-    .institution-logo img {
-        height: 50px;
-    }
-    
-    .institution-logo span {
-        font-size: 0.75rem;
-    }
-    
-    .participants-text {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .institutions-grid {
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-        gap: 15px;
-        padding: 10px;
-    }
-    
-    .institution-logo img {
-        height: 40px;
-    }
-    
-    .institution-logo span {
-        font-size: 0.65rem;
-    }
-    
-    .section-title span {
-        font-size: 0.7em;
-    }
-}
-
 /* === ORGANIZERS SECTION === */
 .organizers-section {
     background-color: #f9f9f9;
@@ -1787,217 +1701,265 @@ width: auto;
     }
 }
 
-.flyer-section {
-    background: #f8f9fa;
-    border-top: 1px solid #dee2e6;
-    border-bottom: 1px solid #dee2e6;
+/* ===== GUEST SPEAKER SECTION ===== */
+.speaker-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.finale-flyer {
-    border-radius: 8px;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-    max-width: 80%;
-    height: auto;
-    border: 1px solid #dee2e6;
+.speaker-image {
+  width: 250px;
+  height: 250px;
+  flex-shrink: 0;
+  overflow: hidden;
 }
 
-.hover-zoom {
-    transition: transform 0.3s ease;
-    cursor: zoom-in;
+.speaker-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
 }
 
-.hover-zoom:hover {
-    transform: scale(1.02);
+.speaker-card:hover .speaker-image img {
+  transform: scale(1.03);
 }
 
-.flyer-actions {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+.speaker-details {
+  padding: 1.5rem;
+  flex-grow: 1;
 }
 
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
+.speaker-details h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+  font-size: 1.4rem;
 }
 
-.lightbox-content {
-    max-width: 90%;
-    max-height: 90%;
-}
-
-.close-lightbox {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close-lightbox:hover {
-    color: #ccc;
-}
-
-@media (max-width: 768px) {
-    .finale-flyer {
-        max-width: 95%;
-    }
-    
-    .flyer-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-.finale-details {
-    padding: 2rem 0;
-    background-color: #f8f9fa;
-}
-
-.details-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.universities-card,
-.judges-card {
-    background: #f8fafc;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-}
-
-.detail-header {
-    color: #2c3e50;
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid #eaeaea;
-}
-
-.detail-header i {
-    color: #3498db;
-}
-
-.university-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 0.75rem;
-}
-
-.uni-item {
-    padding: 0.75rem;
-    background: white;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.uni-item span {
-    color: #7f8c8d;
-    font-size: 0.85rem;
-    display: block;
-    margin-top: 0.25rem;
-}
-
-/* Judges Card */
-.judges-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
-
-.judge-item {
-    padding: 1rem;
-    background: white;
-    border-radius: 8px;
-    border-left: 3px solid #3498db;
-}
-
-.judge-item h4 {
-    color: #2c3e50;
-    margin: 0 0 0.25rem 0;
-    font-size: 1rem;
-}
-
-.judge-item p {
-    color: #7f8c8d;
-    margin: 0;
-    font-size: 0.9rem;
-}
-
-/* Speaker Card */
-.finale-speaker-card {
-    background: linear-gradient(135deg, #f5f9ff 0%, #e6f0fa 100%);
-    border-radius: 10px;
-    max-width: 70%;
-    margin: auto;
-    padding: 1.5rem;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    border-top: 3px solid #e74c3c;
-}
-
-.speaker-content h4 {
-    color: #2c3e50;
-    margin: 0.5rem 0 0.25rem 0;
-}
-
-.speaker-org {
-    color: #7f8c8d;
-    font-style: italic;
-    margin-bottom: 1rem;
+.speaker-title {
+  color: #4a5568;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
 }
 
 .speaker-topic {
-    background: white;
-    padding: 1rem;
-    border-radius: 6px;
-    font-size: 0.95rem;
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+  border-left: 3px solid #3182ce;
 }
 
-.topic-label {
-    font-weight: bold;
-    color: #2c3e50;
-    margin-right: 0.5rem;
+.speaker-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3182ce;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-    .details-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .university-grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    }
+.speaker-linkedin:hover {
+  color: #2c5282;
+  transform: translateX(3px);
+}
+
+.speaker-linkedin i {
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .speaker-card {
+    flex-direction: column;
+    max-width: 400px;
+  }
+  
+  .speaker-image {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .speaker-details {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .speaker-details h4 {
+    font-size: 1.2rem;
+  }
+  
+  .speaker-topic {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}
+
+.university-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.uni-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  width: 80px;
+}
+
+.uni-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  padding: 8px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.uni-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.uni-name {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4a5568;
+  text-align: center;
+}
+
+.judge-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.judge-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.judge-image {
+  height: 190px;
+  overflow: hidden;
+}
+
+.judge-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.judge-card:hover .judge-image img {
+  transform: scale(1.05);
+}
+
+.judge-details {
+  padding: 1.25rem;
+  flex-grow: 1;
+}
+
+.judge-details h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+  font-size: 1.1rem;
+}
+
+.judge-title {
+  color: #4a5568;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.judge-org {
+  color: #718096;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.judge-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #3182ce;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.judge-linkedin:hover {
+  color: #2c5282;
+}
+
+.judge-linkedin i {
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .university-logos {
+    gap: 1rem;
+  }
+  
+  .uni-logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .judge-image {
+    height: 150px;
+  }
 }
 
 @media (max-width: 576px) {
-    .university-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .detail-header {
-        font-size: 1.1rem;
-    }
+  .university-logos {
+    gap: 0.75rem;
+  }
+  
+  .uni-logo-item {
+    width: 70px;
+  }
+  
+  .uni-logo {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .uni-name {
+    font-size: 0.7rem;
+  }
 }
-/* 
+
 /* Countdown Bar Styles */
 .countdown-container {
     background-color: #0059a0;
@@ -2147,4 +2109,65 @@ width: auto;
         padding-bottom: 0 !important;
         margin-bottom: 0 !important;
     }
+}
+
+/* Adjust the flyer size */
+
+.finale-details{
+    background-color: #f9f9f9;
+}
+
+.finale-flyer {
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    max-width: 65%; /* Reduced from 80% */
+    height: auto;
+    border: 1px solid #dee2e6;
+    margin: 0 auto; /* Center the flyer */
+    display: block;
+}
+
+/* Lightbox content sizing */
+.lightbox-content {
+    max-width: 80%; /* Slightly larger for lightbox view */
+    max-height: 80vh;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 992px) {
+    .finale-flyer {
+        max-width: 80%; /* Slightly larger on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .finale-flyer {
+        max-width: 90%; /* Larger on mobile but still smaller than original */
+    }
+    
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 85vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .finale-flyer {
+        max-width: 100%; /* Full width on very small screens */
+    }
+}
+
+.detail-header{
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#grand-finale{
+    background-color: #f9f9f9;
+}
+
+.speaker-linkedin{
+    text-decoration: none !important;
+    font-size: 1.15rem;
 }

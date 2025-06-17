@@ -416,7 +416,6 @@ document.querySelector('.close-lightbox').addEventListener('click', function() {
     document.getElementById('lightbox').style.display = 'none';
 });
 
-// Countdown to June 25, 2025 10:00 AM (WAT)
 function updateCountdown() {
     const finaleDate = new Date('June 25, 2025 10:00:00 GMT+0100');
     const now = new Date();
