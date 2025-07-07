@@ -1,3 +1,5 @@
+
+
 document.addEventListener("scroll", function () {
     const navbar = document.querySelector(".navbar");
     if (window.scrollY > 50) {
@@ -103,6 +105,172 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const imageGallery = document.getElementById('grandFinaleGallery');
+    const imageModal = document.getElementById('image-gallery-modal');
+    const closeImageModal = document.querySelector('#image-gallery-modal .close-modal');
+
+    // Function to load and display images
+    async function loadGalleryImages() {
+        try {
+            const response = await fetch('/api/gf-images');
+            const data = await response.json();
+            
+            if (data.images && data.images.length > 0) {
+                const galleryGrid = imageModal.querySelector('.gallery-grid');
+                galleryGrid.innerHTML = ''; // Clear existing content
+                
+                data.images.forEach(image => {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+                    galleryItem.innerHTML = `
+                        <img src="${image.url}" alt="${image.alt}" loading="lazy">
+                    `;
+                    galleryGrid.appendChild(galleryItem);
+                });
+                
+                console.log(`Loaded ${data.images.length} images from gf-images folder`);
+            } else {
+                console.log('No images found in gf-images folder');
+            }
+        } catch (error) {
+            console.error('Error loading gallery images:', error);
+        }
+    }
+
+    if (imageGallery && imageModal) {
+        imageGallery.addEventListener('click', async function() {
+            console.log('Gallery clicked!');
+            
+            // Load images when modal opens
+            await loadGalleryImages();
+            
+            imageModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    if (closeImageModal) {
+        closeImageModal.addEventListener('click', function() {
+            imageModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Close modal when clicking outside
+    if (imageModal) {
+        imageModal.addEventListener('click', function(event) {
+            if (event.target === imageModal) {
+                imageModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
+    // Video Gallery Modal
+    const videoGallery = document.getElementById('grandFinaleVideo');
+    const videoModal = document.getElementById('video-gallery-modal');
+    const closeVideoModal = document.querySelector('#video-gallery-modal .close-modal');
+    const mainVideoContainer = document.getElementById('mainVideoContainer');
+    const videoGalleryGrid = document.getElementById('videoGalleryGrid');
+
+    if (videoGallery && videoModal) {
+        videoGallery.addEventListener('click', function() {
+            console.log('Video Gallery clicked!');
+            videoModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    // Handle video card clicks with animation
+    if (videoGalleryGrid) {
+        videoGalleryGrid.addEventListener('click', function(event) {
+            const videoCard = event.target.closest('.video-card');
+            if (!videoCard) return;
+
+            const videoId = videoCard.getAttribute('data-ytid');
+            const title = videoCard.getAttribute('data-title');
+            const description = videoCard.getAttribute('data-description');
+
+            // Remove active class from all cards
+            document.querySelectorAll('#video-gallery-modal .video-card').forEach(card => {
+                card.classList.remove('active');
+            });
+
+            // Add active class to clicked card
+            videoCard.classList.add('active');
+
+            // Show and animate main video container
+            mainVideoContainer.style.display = 'block';
+            mainVideoContainer.classList.add('active');
+            
+            // Create YouTube embed
+            const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            mainVideoContainer.innerHTML = `
+                <div class="video-container">
+                    <iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            `;
+
+            // Animate grid to compact mode
+            videoGalleryGrid.classList.add('compact');
+
+            // Scroll to top of modal
+            videoModal.scrollTop = 0;
+        });
+    }
+
+    if (closeVideoModal) {
+        closeVideoModal.addEventListener('click', function() {
+            videoModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Reset modal state
+            mainVideoContainer.classList.remove('active');
+            mainVideoContainer.style.display = 'none';
+            mainVideoContainer.innerHTML = `
+                <div class="main-video-placeholder">
+                    <i class="fas fa-play-circle"></i>
+                    <p>Click a video below to start watching</p>
+                </div>
+            `;
+            videoGalleryGrid.classList.remove('compact');
+            
+            // Remove active class from all cards
+            document.querySelectorAll('#video-gallery-modal .video-card').forEach(card => {
+                card.classList.remove('active');
+            });
+        });
+    }
+
+    // Close video modal when clicking outside
+    if (videoModal) {
+        videoModal.addEventListener('click', function(event) {
+            if (event.target === videoModal) {
+                videoModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                
+                // Reset modal state
+                mainVideoContainer.classList.remove('active');
+                mainVideoContainer.style.display = 'none';
+                mainVideoContainer.innerHTML = `
+                    <div class="main-video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>Click a video below to start watching</p>
+                    </div>
+                `;
+                videoGalleryGrid.classList.remove('compact');
+                
+                // Remove active class from all cards
+                document.querySelectorAll('#video-gallery-modal .video-card').forEach(card => {
+                    card.classList.remove('active');
+                });
+            }
+        });
+    }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -281,14 +449,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    
+
     const modal = document.getElementById('videoModal');
     const youtubeContainer = document.getElementById('youtubeContainer');
     const videoTitle = document.getElementById('videoTitle');
     const videoDescription = document.getElementById('videoDescription');
     const closeVideo = document.querySelector('.close-video-modal');
     
-    // Open modal with YouTube video
-    document.querySelectorAll('.video-card').forEach(card => {
+    // Open modal with YouTube video (only for seminar video cards, not video gallery modal)
+    document.querySelectorAll('#video-gallery .video-card').forEach(card => {
         card.addEventListener('click', function() {
             const videoId = this.getAttribute('data-ytid');
             const title = this.getAttribute('data-title');
@@ -451,4 +621,66 @@ document.getElementById('countdown-bar').addEventListener('click', function() {
     window.location.href = '#grand-finale';
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Grand Finale Gallery Modal
+    const imageGallery = document.getElementById('grandFinaleGallery');
+    const imageModal = document.getElementById('image-gallery-modal');
+    const closeImageModal = document.querySelector('#image-gallery-modal .close-modal');
 
+    // Function to load and display images
+    async function loadGalleryImages() {
+        try {
+            const response = await fetch('/api/images');
+            const data = await response.json();
+            
+            if (data.images && data.images.length > 0) {
+                const galleryGrid = imageModal.querySelector('.gallery-grid');
+                galleryGrid.innerHTML = ''; // Clear existing content
+                
+                data.images.forEach(image => {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+                    galleryItem.innerHTML = `
+                        <img src="${image.url}" alt="${image.alt}" loading="lazy">
+                    `;
+                    galleryGrid.appendChild(galleryItem);
+                });
+                
+                console.log(`Loaded ${data.images.length} images from gf-images folder`);
+            } else {
+                console.log('No images found in gf-images folder');
+            }
+        } catch (error) {
+            console.error('Error loading gallery images:', error);
+        }
+    }
+
+    if (imageGallery && imageModal) {
+        imageGallery.addEventListener('click', async function() {
+            console.log('Gallery clicked!');
+            
+            // Load images when modal opens
+            await loadGalleryImages();
+            
+            imageModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    if (closeImageModal) {
+        closeImageModal.addEventListener('click', function() {
+            imageModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Close modal when clicking outside
+    if (imageModal) {
+        imageModal.addEventListener('click', function(event) {
+            if (event.target === imageModal) {
+                imageModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+});

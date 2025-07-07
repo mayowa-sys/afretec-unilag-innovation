@@ -3,24 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afretec Innovation in Health Challenge</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="AFRETEC-UNILAG Innovation-in-Health Challenge 2025 - Educating Nigeria's brightest student innovators to develop scalable healthcare solutions">
+    <meta name="keywords" content="AFRETEC, UNILAG, healthcare innovation, Nigeria, student challenge, digital health">
+    <meta name="author" content="AFRETEC-UNILAG">
+    
+    <title>AFRETEC-UNILAG Innovation-in-Health Challenge 2025</title>
+    
+    <!-- External CSS Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
-
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- ========================================
+         NAVIGATION
+    ========================================= -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid timer">
             <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Navbar Links -->
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -40,39 +51,29 @@
                     </li>
                 </ul>
             </div>
-            <div id="countdown-bar" class="countdown-container">
-                <div class="container">
-                    <a href="#grand-finale" class="countdown-link">
-                        <span class="countdown-icon">⏳</span>
-                        <span class="countdown-text">GRAND FINALE IN:</span>
-                        <span id="countdown-timer" class="countdown-timer">
-                            <span id="days">00</span>d 
-                            <span id="hours">00</span>h 
-                            <span id="minutes">00</span>m 
-                            <span id="seconds">00</span>s
-                        </span>
-                        <span class="countdown-cta">CLICK TO VIEW DETAILS</span>
-                    </a>
-                </div>
-            </div>
         </div>
     </nav>
 
-
+    <!-- ========================================
+         HERO SECTION
+    ========================================= -->
     <header>
-    <div class="hero-section">
-        <h1 class="hero-title">AFRETEC-UNILAG</h1>
-        <h1 class="hero-subtitle">Innovation-in-Health Challenge 2025</h1>
-        <p class="hero-description">
-            Educating Nigeria's brightest student innovators to develop scalable healthcare solutions
-        </p>
-    </div>
+        <div class="hero-section">
+            <h1 class="hero-title">AFRETEC-UNILAG</h1>
+            <h1 class="hero-subtitle">Innovation-in-Health Challenge 2025</h1>
+            <p class="hero-description">
+                Educating Nigeria's brightest student innovators to develop scalable healthcare solutions
+            </p>
+        </div>
 
-    <a href="#overview" class="scroll-down">
-        <i class="fa-solid fa-arrow-down"></i>
-    </a>
+        <a href="#overview" class="scroll-down">
+            <i class="fa-solid fa-arrow-down"></i>
+        </a>
     </header>
-    <!-- Organization & Funding Section -->
+
+    <!-- ========================================
+         AFFILIATION SECTION
+    ========================================= -->
     <section class="affiliation-section">
         <div class="container">
             <div class="affiliation-grid">
@@ -92,7 +93,7 @@
                     </div>
                 </div>
                 
-                <!-- Divider Line -->
+                <!-- Divider -->
                 <div class="affiliation-divider"></div>
                 
                 <!-- Funders -->
@@ -107,7 +108,10 @@
             </div>
         </div>
     </section>
-    <!-- Overview Section -->
+
+    <!-- ========================================
+         OVERVIEW SECTION
+    ========================================= -->
     <section id="overview" class="overview-section">
         <div class="overview-container">
             <!-- Image Half -->
@@ -118,7 +122,7 @@
             <!-- Text Half with Carousel -->
             <div class="overview-text">
                 <div class="carousel">
-                    <!-- Slide 1 -->
+                    <!-- Slide 1: Challenge Overview -->
                     <div class="slide active">
                         <h2 class="section-title">CHALLENGE OVERVIEW</h2>
                         <div class="text-content">
@@ -143,9 +147,9 @@
                         </div>
                     </div>
     
-                    <!-- Slide 2 -->
+                    <!-- Slide 2: Why This Matters -->
                     <div class="slide">
-                        <h2 class="section-title">Why This Matters To you</h2>
+                        <h2 class="section-title">Why This Matters To You</h2>
                         <div class="text-content">
                             <p class="lead-paragraph">
                                 Beyond competition prizes, this challenge creates lasting value for participants and the healthcare ecosystem:
@@ -181,7 +185,10 @@
             </div>
         </div>
     </section>
-    <!-- Updates Section -->
+
+    <!-- ========================================
+         UPDATES SECTION
+    ========================================= -->
     <section id="updates" class="updates-section">
         <div class="updates-container">
             <h2 class="section-title">
@@ -189,10 +196,12 @@
                 <span>Stay Informed</span>
             </h2>
             <div class="updates-grid">
+                <!-- Updates will be dynamically populated -->
             </div>
         </div>
     </section>
 
+    <!-- Update Modal -->
     <div id="update-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -201,19 +210,24 @@
         </div>
     </div>
 
-    <!-- Teams Section -->
-<section id="teams" class="teams-section">
-    <h2 class="section-title">
-        Shortlisted Teams
-        <span>Meet the Innovators</span>
-    </h2>
-    <div class="container bootstrap snippets bootdeys">
-        <div class="row">
+    <!-- ========================================
+         TEAMS SECTION
+    ========================================= -->
+    <section id="teams" class="teams-section">
+        <h2 class="section-title">
+            Shortlisted Teams
+            <span>Meet the Innovators</span>
+        </h2>
+        <div class="container bootstrap snippets bootdeys">
+            <div class="row">
+                <!-- Teams will be dynamically populated -->
+            </div>
         </div>
-    </div>
-</section> 
+    </section>
 
 
+
+    <!-- Team Modal -->
     <div id="team-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -222,284 +236,424 @@
         </div>
     </div>
 
-
-<section id="participants" class="participants-section py-5">
-    <div class="container">
-        <h2 class="section-title">
-            Participating Institutions
-            <span>Universities paticipating in the Young Innovators Forum</span>
-        </h2>
-        
-        <div class="participants-text mb-5">
-            <p>The challenge attracted 102 innovative team submissions comprising 339 students from 24 universities nationwide, reflecting strong cross-institutional collaboration in healthcare solutions.</p>
-        </div>
-       <div class="institutions-flyer">
-            <img src="images/flyers/institutions.jpg" 
-                 alt="Young Innovators forum participating institutions" 
-                 class="img-fluid finale-flyer click-to-enlarge">
-        </div>
-
-    </div>
-</section>
-
-<section id="grand-finale" class="flyer-section py-5">
-    <div class="container text-center">
-        <h2 class="section-title mb-4">
-            Grand Finale Announcement
-            <span>June 25, 2025 @ Old Great Hall, College of Medicine</span>
-        </h2>
-        
-        <div class="flyer-container">
-            <img src="images/flyers/grand-finale.jpg" 
-                 alt="AFRETEC-UNILAG Innovation in Health Challenge Grand Finale Flyer" 
-                 class="img-fluid finale-flyer click-to-enlarge">
+    <!-- ========================================
+         PARTICIPANTS SECTION
+    ========================================= -->
+    <section id="participants" class="participants-section py-5">
+        <div class="container">
+            <h2 class="section-title">
+                Participating Institutions
+                <span>Universities participating in the Young Innovators Forum</span>
+            </h2>
             
-            <div class="flyer-actions mt-3">
-                <a href="images/flyers/grand-finale.jpg" 
-                   download="AFRETEC-Health-Innovation-Finale-Flyer.jpg"
-                   class="btn btn-primary me-2">
-                   <i class="fas fa-download"></i> Download Flyer
-                </a>
-                <a href="https://www.google.com/maps/search/?api=1&query=Old+Great+Hall,+College+of+Medicine,+University+of+Lagos,+Idi-Araba+Campus" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
-                   <i class="fas fa-map-marker-alt"></i> Venue Directions
-                </a>
+            <div class="participants-text mb-5">
+                <p>The challenge attracted 102 innovative team submissions comprising 339 students from 24 universities nationwide, reflecting strong cross-institutional collaboration in healthcare solutions.</p>
+            </div>
+            
+            <div class="institutions-flyer">
+                <img src="images/flyers/institutions.jpg" 
+                     alt="Young Innovators forum participating institutions" 
+                     class="img-fluid finale-flyer click-to-enlarge">
             </div>
         </div>
+    </section>
+
+    <!-- ========================================
+         GRAND FINALE SECTION
+    ========================================= -->
+    <section id="grand-finale" class="flyer-section py-5">
+        <div class="container text-center">
+            <h2 class="section-title mb-4">
+                Grand Finale Announcement
+                <span>June 25, 2025 @ Old Great Hall, College of Medicine</span>
+            </h2>
+            
+            <!-- Flyer and buttons removed. Ready for new content. -->
+        </div>
+    </section>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox"></span>
+        <img class="lightbox-content" id="lightbox-img">
     </div>
-</section>
 
-<!-- Lightbox overlay -->
-<div id="lightbox" class="lightbox">
-    <span class="close-lightbox"></span>
-    <img class="lightbox-content" id="lightbox-img">
-</div>
-
-<!-- Finale Details Section -->
-<section class="finale-details py-5">
-    <div class="container">
-        <!-- Finalist Universities with Logos -->
-        <div class="finale-card mb-5">
-            <h3 class="detail-header">
-                <i class="fas fa-university"></i> Finalist Universities
-            </h3>
-            <div class="university-logos">
-                <!-- University 1 -->
-                <div class="uni-logo-item">
-                    <img src="images/institutions/unilag.png" alt="University of Lagos" class="uni-logo">
-                    <span class="uni-name">UNILAG</span>
-                </div>
-                <!-- University 2 -->
-                <div class="uni-logo-item">
-                    <img src="images/institutions/ui.png" alt="University of Ibadan" class="uni-logo">
-                    <span class="uni-name">UI</span>
-                </div>
-                <!-- University 3 -->
-                <div class="uni-logo-item">
-                    <img src="images/institutions/mcpherson.png" alt="McPherson University" class="uni-logo">
-                    <span class="uni-name">McU</span>
-                </div>
-                <!-- University 4 -->
-                <div class="uni-logo-item">
-                    <img src="images/institutions/lautech.png" alt="LAUTECH" class="uni-logo">
-                    <span class="uni-name">LAUTECH</span>
-                </div>
-                <!-- University 5 -->
-                <div class="uni-logo-item">
-                    <img src="images/institutions/unimed.png" alt="UNIMED" class="uni-logo">
-                    <span class="uni-name">UNIMED</span>
-                </div>
-                <!-- University 6 -->
-                <div class="uni-logo-item">
-                    <img src="images/institutions/unijos.png" alt="University of Jos" class="uni-logo">
-                    <span class="uni-name">UNIJOS</span>
-                </div>
-                <!-- University 7 -->
-                <div class="uni-logo-item">
-                    <img src="images/institutions/fupre.png" alt="FUPRE" class="uni-logo">
-                    <span class="uni-name">FUPRE</span>
-                </div>
-                <!-- University 8 -->
-                <div class="uni-logo-item">
-                    <img src="images/institutions/uniben.png" alt="UNIBEN" class="uni-logo">
-                    <span class="uni-name">UNIBEN</span>
-                </div>
-                <!-- University 9 -->
-                <div class="uni-logo-item">
-                    <img src="images/institutions/thomas.png" alt="TAU" class="uni-logo">
-                    <span class="uni-name">TAU</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Panel of Judges -->
-        <div class="finale-card mb-5">
-            <h3 class="detail-header">
-                <i class="fas fa-gavel"></i> Panel of Judges
-            </h3>
-            <div class="row">
-                <!-- Judge 1 -->
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="judge-card">
-                        <div class="judge-image">
-                            <img src="images/organizers/odunsi.jpg" alt="Dr. Adebanke Odunsi" class="img-fluid">
-                        </div>
-                        <div class="judge-details">
-                            <h4>Dr. Adebanke Odunsi</h4>
-                            <p class="judge-title">Head Digital Health</p>
-                            <p class="judge-org">Lagos State Government</p>
-                            <a target="_blank" href="https://www.linkedin.com/in/adebanke-odunsi-93319797/" class="judge-linkedin">
-                                <i class="fab fa-linkedin"></i> Profile
-                            </a>
-                        </div>
+    <!-- ========================================
+         FINALE DETAILS SECTION
+    ========================================= -->
+    <section class="finale-details py-5">
+        <div class="container">
+            <!-- Finalist Universities -->
+            <div class="finale-card mb-5">
+                <h3 class="detail-header">
+                    <i class="fas fa-university"></i> Finalist Universities
+                </h3>
+                <div class="university-logos">
+                    <div class="uni-logo-item">
+                        <img src="images/institutions/unilag.png" alt="University of Lagos" class="uni-logo">
+                        <span class="uni-name">UNILAG</span>
                     </div>
-                </div>
-                
-                <!-- Judge 2 -->
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="judge-card">
-                        <div class="judge-image">
-                            <img src="images/organizers/anusi.jpg" alt="Dr. Omobosola Asuni" class="img-fluid">
-                        </div>
-                        <div class="judge-details">
-                            <h4>Dr. Omobosola Asuni</h4>
-                            <p class="judge-title">Head of Public Health, Africa</p>
-                            <p class="judge-org">Helium Health</p>
-                            <a target="_blank" href="https://www.linkedin.com/in/omobosola-asuni-8a8117260/" class="judge-linkedin">
-                                <i class="fab fa-linkedin"></i> Profile
-                            </a>
-                        </div>
+                    <div class="uni-logo-item">
+                        <img src="images/institutions/ui.png" alt="University of Ibadan" class="uni-logo">
+                        <span class="uni-name">UI</span>
                     </div>
-                </div>
-                
-                <!-- Judge 3 -->
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="judge-card">
-                        <div class="judge-image">
-                            <img src="images/organizers/abiola.jpg" alt="Mr. Abiola Oshunnuyi" class="img-fluid">
-                        </div>
-                        <div class="judge-details">
-                            <h4>Mr. Abiola Oshunniyi</h4>
-                            <p class="judge-title">Program Manager-Digital Health</p>
-                            <p class="judge-org">Clinton Health Access Initiative</p>
-                            <a target="_blank" href="https://www.linkedin.com/in/abiolaoshunniyi/" class="judge-linkedin">
-                                <i class="fab fa-linkedin"></i> Profile
-                            </a>
-                        </div>
+                    <div class="uni-logo-item">
+                        <img src="images/institutions/mcpherson.png" alt="McPherson University" class="uni-logo">
+                        <span class="uni-name">McU</span>
                     </div>
-                </div>
-                
-                <!-- Judge 4 -->
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="judge-card">
-                        <div class="judge-image">
-                            <img src="images/organizers/Stephanie.jpg" alt="Ms. Stephanie Okpere" class="img-fluid">
-                        </div>
-                        <div class="judge-details">
-                            <h4>Ms. Stephanie Okpere</h4>
-                            <p class="judge-title">Head Digital Health Innovations</p>
-                            <p class="judge-org">Co-creation Hub (CcHub)</p>
-                            <a target="_blank" href="https://www.linkedin.com/in/stephanie-okpere-mph-prince2%C2%AE-85193975/" class="judge-linkedin">
-                                <i class="fab fa-linkedin"></i> Profile
-                            </a>
-                        </div>
+                    <div class="uni-logo-item">
+                        <img src="images/institutions/lautech.png" alt="LAUTECH" class="uni-logo">
+                        <span class="uni-name">LAUTECH</span>
+                    </div>
+                    <div class="uni-logo-item">
+                        <img src="images/institutions/unimed.png" alt="UNIMED" class="uni-logo">
+                        <span class="uni-name">UNIMED</span>
+                    </div>
+                    <div class="uni-logo-item">
+                        <img src="images/institutions/unijos.png" alt="University of Jos" class="uni-logo">
+                        <span class="uni-name">UNIJOS</span>
+                    </div>
+                    <div class="uni-logo-item">
+                        <img src="images/institutions/fupre.png" alt="FUPRE" class="uni-logo">
+                        <span class="uni-name">FUPRE</span>
+                    </div>
+                    <div class="uni-logo-item">
+                        <img src="images/institutions/uniben.png" alt="UNIBEN" class="uni-logo">
+                        <span class="uni-name">UNIBEN</span>
+                    </div>
+                    <div class="uni-logo-item">
+                        <img src="images/institutions/thomas.png" alt="TAU" class="uni-logo">
+                        <span class="uni-name">TAU</span>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Guest Speaker -->
-        <div class="finale-card">
-            <h3 class="detail-header">
-                <i class="fas fa-microphone"></i> Guest Speaker
-            </h3>
-            <div class="speaker-card">
-                <div class="speaker-image">
-                    <img src="images/organizers/oke.jpg" alt="Mr. Adekunle Dalton-Oke" class="img-fluid">
+            <!-- Our Innovators and Mentors -->
+            <div class="finale-card mb-5">
+                <h3 class="detail-header">
+                    <i class="fas fa-users"></i> Our Innovators and Mentors
+                </h3>
+                <div class="innovators-images">
+                    <img src="images/innovators/collage-1.jpg" alt="Innovators Collage 1" class="innovator-collage">
+                    <img src="images/innovators/collage-2.jpg" alt="Innovators Collage 2" class="innovator-collage">
                 </div>
-                <div class="speaker-details">
-                    <h4>Mr. Adekunle Dalton-Oke</h4>
-                    <p class="speaker-title">Head of Communications, ABCHealth</p>
-                    <div class="speaker-topic">
-                        <strong>Topic:</strong> 
-                        "Exploring Digital Health Frontiers - Opportunities for Researchers and Innovators"
-                    </div>
-                    <a target="_blank" href="https://www.linkedin.com/in/adekunledaltonoke/?originalSubdomain=ng" class="speaker-linkedin">
-                        <i class="fab fa-linkedin"></i> Profile
+                <div class="innovators-download">
+                    <a href="downloads/Meet the Mentors.pdf" class="mentors-download-btn" download>
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Meet the Mentors</span>
                     </a>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
 
-    
-    <!-- Event Leadership Section -->
-<section id="organizers" class="organizers-section py-5">
-    <div class="container">
-        <!-- Management Team -->
-        <div class="row justify-content-center mb-5">
-            <h3 class="sub-section-title">
-                AFRETEC IN UNILAG
-            </h3>
-            <div class="col-md-4 col-lg-3 mb-4">
-                <div class="organizer-card">
-                    <div class="organizer-image">
-                        <img src="images/organizers/vc.jpeg" alt="Prof. Folasade Ogunsola">
+            <!-- Panel of Judges & Guest Speaker -->
+            <div class="finale-card mb-5">
+                <div class="judges-speaker-container">
+                    <!-- Panel of Judges -->
+                    <div class="judges-section">
+                        <h3 class="detail-header">
+                            <i class="fas fa-gavel"></i> Panel of Judges
+                        </h3>
+                        <div class="judges-grid">
+                            <!-- Judge 1 -->
+                            <div class="judge-item">
+                                <div class="judge-avatar">
+                                    <img src="images/organizers/odunsi.jpg" alt="Dr. Adebanke Odunsi">
+                                </div>
+                                <div class="judge-info">
+                                    <h4>Dr. Adebanke Odunsi</h4>
+                                    <p class="judge-role">Head Digital Health</p>
+                                    <p class="judge-company">Lagos State Government</p>
+                                    <a target="_blank" href="https://www.linkedin.com/in/adebanke-odunsi-93319797/" class="judge-linkedin">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Judge 2 -->
+                            <div class="judge-item">
+                                <div class="judge-avatar">
+                                    <img src="images/organizers/anusi.jpg" alt="Dr. Omobosola Asuni">
+                                </div>
+                                <div class="judge-info">
+                                    <h4>Dr. Omobosola Asuni</h4>
+                                    <p class="judge-role">Head of Public Health, Africa</p>
+                                    <p class="judge-company">Helium Health</p>
+                                    <a target="_blank" href="https://www.linkedin.com/in/omobosola-asuni-8a8117260/" class="judge-linkedin">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Judge 3 -->
+                            <div class="judge-item">
+                                <div class="judge-avatar">
+                                    <img src="images/organizers/abiola.jpg" alt="Mr. Abiola Oshunnuyi">
+                                </div>
+                                <div class="judge-info">
+                                    <h4>Mr. Abiola Oshunniyi</h4>
+                                    <p class="judge-role">Program Manager-Digital Health</p>
+                                    <p class="judge-company">Clinton Health Access Initiative</p>
+                                    <a target="_blank" href="https://www.linkedin.com/in/abiolaoshunniyi/" class="judge-linkedin">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Judge 4 -->
+                            <div class="judge-item">
+                                <div class="judge-avatar">
+                                    <img src="images/organizers/Stephanie.jpg" alt="Ms. Stephanie Okpere">
+                                </div>
+                                <div class="judge-info">
+                                    <h4>Ms. Stephanie Okpere</h4>
+                                    <p class="judge-role">Head Digital Health Innovations</p>
+                                    <p class="judge-company">Co-creation Hub (CcHub)</p>
+                                    <a target="_blank" href="https://www.linkedin.com/in/stephanie-okpere-mph-prince2%C2%AE-85193975/" class="judge-linkedin">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="organizer-details">
-                        <h5 class="organizer-name">Prof. Folasade Ogunsola</h5>
-                        <p class="organizer-role">Vice Chancellor, University of Lagos</p>
+
+                    <!-- Guest Speaker -->
+                    <div class="speaker-section">
+                        <h3 class="detail-header">
+                            <i class="fas fa-microphone"></i> Guest Speaker
+                        </h3>
+                        <div class="speaker-compact">
+                            <div class="speaker-avatar">
+                                <img src="images/organizers/oke.jpg" alt="Mr. Adekunle Dalton-Oke">
+                            </div>
+                            <div class="speaker-info">
+                                <h4>Mr. Adekunle Dalton-Oke</h4>
+                                <p class="speaker-role">Head of Communications, ABCHealth</p>
+                                <div class="speaker-topic-compact">
+                                    <strong>Topic:</strong> 
+                                    "Exploring Digital Health Frontiers - Opportunities for Researchers and Innovators"
+                                </div>
+                                <a target="_blank" href="https://www.linkedin.com/in/adekunledaltonoke/?originalSubdomain=ng" class="speaker-linkedin">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-lg-3 mb-4">
-                <div class="organizer-card">
-                    <div class="organizer-image">
-                        <img src="images/organizers/oboh.jpeg" alt="Prof. Bola Oboh">
-                    </div>
-                    <div class="organizer-details">
-                        <h5 class="organizer-name">Prof. Bola Oboh</h5>
-                        <p class="organizer-role">Deputy Vice Chancellor A&R, UNILAG. UNILAG Board representative for AFRETEC.</p>
+
+
+        </div>
+    </section>
+
+    <!-- ========================================
+         GRAND FINALE MEDIA SECTION
+    ========================================= -->
+    <section class="grand-finale-media py-5">
+        <div class="container">
+            <div class="media-container">
+                <!-- Image Gallery Section -->
+                <div class="media-section gallery-section">
+                    <h3 class="media-title">
+                        <i class="fas fa-images"></i> Event Gallery
+                    </h3>
+                    <div class="stacked-gallery" id="grandFinaleGallery">
+                        <div class="gallery-stack" id="gallery-stack">
+                            <div class="stacked-image" style="--stack-index: 0;">
+                                <img src="images\gf-images\gf- (1).jpg" alt="Grand Finale Moment 1">
+                            </div>
+                            <div class="stacked-image" style="--stack-index: 1;">
+                                <img src="images\gf-images\gf- (2).jpg" alt="Grand Finale Moment 1">
+                            </div>
+                            <div class="stacked-image" style="--stack-index: 2;">
+                                <img src="images\gf-images\gf- (3).jpg" alt="Grand Finale Moment 1">
+                            </div>
+                            <div class="stacked-image" style="--stack-index: 3;">
+                                <img src="images\gf-images\gf- (4).jpg" alt="Grand Finale Moment 1">
+                            </div>
+                            <div class="stacked-image" style="--stack-index: 4;">
+                                <img src="images\gf-images\gf- (5).jpg" alt="Grand Finale Moment 1">
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span class="gallery-count">+12 more</span>
+                            <span class="gallery-text">Click to view all photos</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-lg-3 mb-4">
-                <div class="organizer-card">
-                    <div class="organizer-image">
-                        <img src="images/organizers/ismail.jpeg" alt="Prof. Ismail Ibraheem">
-                    </div>
-                    <div class="organizer-details">
-                        <h5 class="organizer-name">Prof. Ismail Ibraheem</h5>
-                        <p class="organizer-role">AFRETEC Coordinator, University of Lagos</p>
+
+                <!-- Video Section -->
+                <div class="media-section video-section">
+                    <h3 class="media-title">
+                        <i class="fas fa-video"></i> Event Highlights
+                    </h3>
+                    <div class="video-preview" id="grandFinaleVideo">
+                        <div class="video-thumbnail-container">
+                            <img src="images/gf-images/important.jpg" alt="Event Video Preview" class="video-thumbnail">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <p class="video-description">Watch highlights from the Grand Finale event</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title">
-            Challenge Organizers
+        <div id="image-gallery-modal" class="modal">
+            <div class="image-modal-content">
+                <span class="close-modal">&times;</span>
+                <h2><i class="fas fa-images"></i> Grand Finale Gallery</h2>
+                <div class="gallery-grid">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div id="video-gallery-modal" class="modal">
+            <div class="video-modal-content">
+                <span class="close-modal">&times;</span>
+                <h2><i class="fas fa-video"></i> Grand Finale Videos</h2>
+                
+                <!-- Main Video Player Area -->
+                <div class="main-video-container" id="mainVideoContainer">
+                    <div class="main-video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>Click a video below to start watching</p>
+                    </div>
+                </div>
+                
+                <!-- Video Thumbnails Grid -->
+                <div class="video-gallery-grid" id="videoGalleryGrid">
+                    <!-- Video 1 -->
+                    <div class="video-card" data-ytid="YsqEBOSkRcY" data-title="Grand Finale Opening" data-description="Opening of the Grand Finale event">
+                        <div class="thumbnail-container">
+                            <img src="https://img.youtube.com/vi/YsqEBOSkRcY/maxresdefault.jpg" alt="Grand Finale Opening" class="video-thumbnail">
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <span class="duration">11:35</span>
+                        </div>
+                        <div class="video-info">
+                            <span class="excerpt-badge">Video 1</span>
+                            <h4>Grand Finale Opening</h4>
+                            <p>Opening of the Grand Finale event</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Video 2 -->
+                    <div class="video-card" data-ytid="3EB8NIr1dWE" data-title="Guest Speaker's Session" data-description="Guest Speaker's Session">
+                        <div class="thumbnail-container">
+                            <img src="https://img.youtube.com/vi/3EB8NIr1dWE/maxresdefault.jpg" alt="Guest Speaker's Session" class="video-thumbnail">
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <span class="duration">25:59</span>
+                        </div>
+                        <div class="video-info">
+                            <span class="excerpt-badge">Video 2</span>
+                            <h4>Guest Speaker's Session</h4>
+                            <p>Guest Speaker's Session</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Video 3 -->
+                    <div class="video-card" data-ytid="KLagWdnivD8" data-title="Team Pitches" data-description="Team Pitches">
+                        <div class="thumbnail-container">
+                            <img src="https://img.youtube.com/vi/KLagWdnivD8/maxresdefault.jpg" alt="Team Pitch" class="video-thumbnail">
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <span class="duration">3 hours</span>
+                        </div>
+                        <div class="video-info">
+                            <span class="excerpt-badge">Video 3</span>
+                            <h4>Award Presentation</h4>
+                            <p>Award presentation ceremony</p>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+
+
+    <!-- ========================================
+         ORGANIZERS SECTION
+    ========================================= -->
+    <section id="organizers" class="organizers-section py-5">
+        <div class="container">
+            <!-- Management Team -->
+            <div class="row justify-content-center mb-5">
+                <h3 class="sub-section-title">AFRETEC IN UNILAG</h3>
+                
+                <!-- VC -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="organizer-card">
+                        <div class="organizer-image">
+                            <img src="images/organizers/vc.jpeg" alt="Prof. Folasade Ogunsola">
+                        </div>
+                        <div class="organizer-details">
+                            <h5 class="organizer-name">Prof. Folasade Ogunsola</h5>
+                            <p class="organizer-role">Vice Chancellor, University of Lagos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- DVC -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="organizer-card">
+                        <div class="organizer-image">
+                            <img src="images/organizers/oboh.jpeg" alt="Prof. Bola Oboh">
+                        </div>
+                        <div class="organizer-details">
+                            <h5 class="organizer-name">Prof. Bola Oboh</h5>
+                            <p class="organizer-role">Deputy Vice Chancellor A&R, UNILAG. UNILAG Board representative for AFRETEC.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coordinator -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="organizer-card">
+                        <div class="organizer-image">
+                            <img src="images/organizers/ismail.jpeg" alt="Prof. Ismail Ibraheem">
+                        </div>
+                        <div class="organizer-details">
+                            <h5 class="organizer-name">Prof. Ismail Ibraheem</h5>
+                            <p class="organizer-role">AFRETEC Coordinator, University of Lagos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Team -->
+            <h2 class="section-title">Challenge Organizers</h2>
             
-        </h2>
-
-        <!-- Project Team Members -->
-        <div class="row justify-content-center mb-5">
-            <h3 class="sub-section-title">
-                Project Team Members
-            </h3>
-            <div class="col-md-4 col-lg-3 mb-4">
-                <div class="organizer-card">
-                    <div class="organizer-image">
-                        <img src="images/organizers/adewumi.jpeg" alt="Dr Olayinka Adewumi">
-                    </div>
-                    <div class="organizer-details">
-                        <h5 class="organizer-name">Dr. Olayinka Adewumi</h5>
-                        <p class="organizer-role">Acting Director, ITMO. Project lead, AFRETEC-UNILAG Innovation-in-Health Challenge</p>
-                        <a href="https://www.linkedin.com/in/olayinka-omowunmi-adewumi-69315517/" target="_blank" class="linkedin-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
+            <div class="row justify-content-center mb-5">
+                <h3 class="sub-section-title">Project Team Members</h3>
+                
+                <!-- Project Lead -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="organizer-card">
+                        <div class="organizer-image">
+                            <img src="images/organizers/adewumi.jpeg" alt="Dr Olayinka Adewumi">
+                        </div>
+                        <div class="organizer-details">
+                            <h5 class="organizer-name">Dr. Olayinka Adewumi</h5>
+                            <p class="organizer-role">Acting Director, ITMO. Project lead, AFRETEC-UNILAG Innovation-in-Health Challenge</p>
+                            <a href="https://www.linkedin.com/in/olayinka-omowunmi-adewumi-69315517/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div><div class="col-md-4 col-lg-3 mb-4">
+                
+                <!-- Facilitator -->
+                <div class="col-md-4 col-lg-3 mb-4">
                 <div class="organizer-card">
                     <div class="organizer-image">
                         <img src="images/organizers/noimot.jpeg" alt="Noimot Abisola Balogun">
@@ -606,7 +760,7 @@
                     </div>
                     <div class="organizer-details">
                         <h5 class="organizer-name">Dr. Bukola A. Oseni</h5>
-                        <p class="organizer-role">Faculty of Pharmacy Rep, AFRETEC-UNILAG  Innovation in Health Challenge. </p>
+                        <p class="organizer-role">Faculty of Pharmacy Rep, AFRETEC-UNILAG  Innovation in Health Challenge. </p>
                         <a href="https://www.linkedin.com/in/bukola-adebayo-oseni-phd-49644023/" target="_blank" class="linkedin-link">
                             <i class="fab fa-linkedin"></i>
                         </a>
@@ -622,114 +776,112 @@
             </h3>
             <!-- Speaker 1 -->
             <div class="col-md-4 col-lg-3 mb-4">
-                <div class="organizer-card speaker-card" data-speaker-id="obichi" 
-                     data-flyer="images/flyers/obichi.jpeg">
+                <div class="organizer-card speaker-card" data-speaker-id="obichi" data-flyer="images/flyers/obichi.jpeg">
                     <div class="organizer-image">
                         <img src="images/webinar/obichi.jpeg" alt="Dr. Obichi Obiajunwa">
                     </div>
                     <div class="organizer-details">
                         <h5 class="organizer-name">Dr. Obichi Obiajunwa</h5>
                         <p class="organizer-role">Executive Director, Hutzpa Innovations</p>
-                        <div class="speaker-bio" style="display:none;">
+                        <div class="speaker-bio d-none">
                             <p>Dr. Obichi Obiajunwa is a visionary leader, innovation consultant, and public health strategist with over a decade of experience driving transformative change across Africa. As the founder of the Young Innovation Leaders Fellowship and executive director of Hutzpa Innovations, he empowers individuals and organizations to turn bold ideas into impactful solutions. With expertise spanning innovation strategy, leadership development, AI ethics, and public health, Dr. Obichi collaborates with global partners to foster sustainable growth. Passionate about mentoring future leaders, he is dedicated to shaping a new generation of innovators who redefine possibilities and create lasting impact.</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Speaker 2 -->
             <div class="col-md-4 col-lg-3 mb-4">
-                <div class="organizer-card speaker-card" data-speaker-id="abimbola" 
-                     data-flyer="images/flyers/abimbola.jpeg">
+                <div class="organizer-card speaker-card" data-speaker-id="abimbola" data-flyer="images/flyers/abimbola.jpeg">
                     <div class="organizer-image">
                         <img src="images/webinar/abimbola.jpeg" alt="Abimbola Adebakin">
                     </div>
                     <div class="organizer-details">
                         <h5 class="organizer-name">Abimbola Adebakin</h5>
                         <p class="organizer-role">Founder/CEO at Advantage Health Africa</p>
-                        <div class="speaker-bio" style="display:none;">
+                        <div class="speaker-bio d-none">
                             <p>Abimbola Adebakin is the Founder/CEO of Advantage Health Africa. Advantage Health Africa creates a platform for collaboration and performance improvement in the health sector, with initial emphasis on retail pharmacy practice in Nigeria.</p>
                             <p>They are collaborators by nature, and all they do promotes health innovation, capacity development along the value chain in retail pharmacy, and positioning the industry to better serve its target market.</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Speaker 3 -->
             <div class="col-md-4 col-lg-3 mb-4">
-                <div class="organizer-card speaker-card" data-speaker-id="niyi" 
-                     data-flyer="images/flyers/niyi.jpeg">
+                <div class="organizer-card speaker-card" data-speaker-id="niyi" data-flyer="images/flyers/niyi.jpeg">
                     <div class="organizer-image">
                         <img src="images/webinar/niyi.jpeg" alt="Dr. Niyi Osamiluyi">
                     </div>
                     <div class="organizer-details">
                         <h5 class="organizer-name">Dr. Niyi Osamiluyi</h5>
                         <p class="organizer-role">Founder/CEO, Premier Health Systems (PHS) Consult</p>
-                        <div class="speaker-bio" style="display:none;">
-                            Dr. Adeniyi Osamiluyi is the founder/CEO of Premier Medical Systems (PMS) Nigeria Limited, a digital health social enterprise, with the focus of leveraging Information Technology (IT) to improve access of the underserved to healthcare in Africa. PMS specializes in the design, development, deployment and support of solutions in the Healthcare sector.</p>
+                        <div class="speaker-bio d-none">
+                            <p>Dr. Adeniyi Osamiluyi is the founder/CEO of Premier Medical Systems (PMS) Nigeria Limited, a digital health social enterprise, with the focus of leveraging Information Technology (IT) to improve access of the underserved to healthcare in Africa. PMS specializes in the design, development, deployment and support of solutions in the Healthcare sector.</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Speaker 4 -->
             <div class="col-md-4 col-lg-3 mb-4">
-                <div class="organizer-card speaker-card" data-speaker-id="folake" 
-                     data-flyer="images/flyers/folake.jpeg">
+                <div class="organizer-card speaker-card" data-speaker-id="folake" data-flyer="images/flyers/folake.jpeg">
                     <div class="organizer-image">
                         <img src="images/webinar/folake.jpeg" alt="Folake Owodunni">
                     </div>
                     <div class="organizer-details">
                         <h5 class="organizer-name">Folake Owodunni</h5>
                         <p class="organizer-role">CEO, Emergency Response Africa</p>
-                        <div class="speaker-bio" style="display:none;">
+                        <div class="speaker-bio d-none">
                             <p>Folake Owodunni is the co-founder and CEO of Emergency Response Africa (ERA), a healthcare technology company that is changing how medical emergencies are managed in Africa, beginning in Nigeria.</p>
                             <p>ERA saves lives by connecting individuals experiencing a medical emergency to the largest network of Community First Responders, ambulances, and hospitals to deliver care in minutes using technology.</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Speaker 5 -->
             <div class="col-md-4 col-lg-3 mb-4">
-                <div class="organizer-card speaker-card" data-speaker-id="sani" 
-                     data-flyer="images/flyers/sani.jpeg">
+                <div class="organizer-card speaker-card" data-speaker-id="sani" data-flyer="images/flyers/sani.jpeg">
                     <div class="organizer-image">
                         <img src="images/webinar/sani.jpeg" alt="Francis Sani O.">
                     </div>
                     <div class="organizer-details">
                         <h5 class="organizer-name">Francis Sani O.</h5>
                         <p class="organizer-role">Programme Director, 3MTT Nigeria</p>
-                        <div class="speaker-bio" style="display:none;">
+                        <div class="speaker-bio d-none">
                             <p>Francis Sani is currently serving as the Principal at [MAGIC Fund] and as a Technical Adviser, with a strong background in business development, start-ups, and entrepreneurship</p>
                             <p>Noteworthy career highlights include holding the position of Honourable Minister of Communications, Innovation, and Digital Economy as a Technical Adviser, and serving in various leadership roles at organizations such as Magic Fund, Helium Health, and Co-creation Hub (CcHUB).</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Speaker 6 -->
             <div class="col-md-4 col-lg-3 mb-4">
-                <div class="organizer-card speaker-card" data-speaker-id="atoki" 
-                     data-flyer="images/flyers/atoki.jpeg">
+                <div class="organizer-card speaker-card" data-speaker-id="atoki" data-flyer="images/flyers/atoki.jpeg">
                     <div class="organizer-image">
                         <img src="images/webinar/atoki.jpeg" alt="Dr. Mories Atoki">
                     </div>
                     <div class="organizer-details">
                         <h5 class="organizer-name">Dr. Mories Atoki</h5>
                         <p class="organizer-role">CEO - ABCHealth</p>
-                        <div class="speaker-bio" style="display:none;">
+                        <div class="speaker-bio d-none">
                             <p>Mories Atoki is a Nigerian lawyer and business executive. She was appointed as the CEO at African Business Coalition For Health (ABC Health) where she champions African led Policy discussions on health, innovation and public-private collaborations. She is the current coordinator of the Health Policy Commission  of the National Economic Summit Group (NESG)</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Speaker 7 -->
             <div class="col-md-4 col-lg-3 mb-4">
-                <div class="organizer-card speaker-card" data-speaker-id="andrew" 
-                     data-flyer="images/flyers/mathworks.jpeg">
+                <div class="organizer-card speaker-card" data-speaker-id="andrew" data-flyer="images/flyers/mathworks.jpeg">
                     <div class="organizer-image">
                         <img src="images/webinar/andrew.jpeg" alt="Dr. Andrew Redfearn">
                     </div>
                     <div class="organizer-details">
                         <h5 class="organizer-name">Dr. Andrew Redfearn</h5>
                         <p class="organizer-role">MathWorks Academia Team</p>
-                        <div class="speaker-bio" style="display:none;">
+                        <div class="speaker-bio d-none">
                             <p>Dr. Andrew Redfearn is part of the academic support team at MathWorks. He has extensive experience teaching MATLAB</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
         </div>
     </div>
 </section>
