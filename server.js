@@ -31,30 +31,6 @@ const fallbackUpdates = [
     }
 ];
 
-const fallbackTeams = [
-    {
-        id: 1,
-        name: "Team HealthTech",
-        university: "University of Lagos",
-        project: "AI-powered diagnostic tool for rural healthcare",
-        members: ["John Doe", "Jane Smith", "Mike Johnson"]
-    },
-    {
-        id: 2,
-        name: "Innovators Plus",
-        university: "University of Ibadan", 
-        project: "Mobile app for maternal health monitoring",
-        members: ["Sarah Wilson", "David Brown", "Lisa Davis"]
-    },
-    {
-        id: 3,
-        name: "Digital Health Solutions",
-        university: "McPherson University",
-        project: "Telemedicine platform for remote consultations",
-        members: ["Alex Chen", "Maria Garcia", "Tom Anderson"]
-    }
-];
-
 let client = null;
 
 // Connect to MongoDB only if URI is provided
@@ -155,6 +131,62 @@ app.get('/api/gf-images', (req, res) => {
     } catch (error) {
         console.error('Error reading gf-images directory:', error);
         res.status(500).json({ error: 'Failed to read images', images: [] });
+    }
+});
+
+// Endpoint to get mentors data
+app.get('/api/mentors', (req, res) => {
+    try {
+        const mentorsPath = path.join(__dirname, 'mentors.json');
+        const mentorsDir = path.join(__dirname, 'public', 'images', 'mentors');
+        
+        // Check if mentors.json exists
+        if (!fs.existsSync(mentorsPath)) {
+            console.log('mentors.json not found');
+            return res.json({ mentors: [] });
+        }
+        
+        // Read mentors data from JSON file
+        const mentorsData = JSON.parse(fs.readFileSync(mentorsPath, 'utf8'));
+        
+        // Check if mentors directory exists
+        if (!fs.existsSync(mentorsDir)) {
+            console.log('mentors directory not found');
+            return res.json({ mentors: [] });
+        }
+        
+        // Read all files from mentors directory
+        const files = fs.readdirSync(mentorsDir);
+        
+        // Filter for image files only
+        const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
+        const imageFiles = files.filter(file => {
+            const ext = path.extname(file).toLowerCase();
+            return imageExtensions.includes(ext);
+        });
+        
+        // Create a map of available images
+        const availableImages = new Set(imageFiles);
+        
+        // Combine JSON data with image URLs
+        const mentors = mentorsData.map(mentor => {
+            const imageUrl = availableImages.has(mentor.image) 
+                ? `/images/mentors/${mentor.image}` 
+                : null;
+            
+            return {
+                name: mentor.name,
+                university: mentor.university,
+                team: mentor.team,
+                imageUrl: imageUrl
+            };
+        });
+        
+        res.json({ mentors });
+        console.log('mentors fetched successfully');
+    } catch (error) {
+        console.error('Error reading mentors data:', error);
+        res.status(500).json({ error: 'Failed to load mentors', mentors: [] });
     }
 });
 

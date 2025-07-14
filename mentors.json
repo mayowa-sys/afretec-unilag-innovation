@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Dr. Samuel Farohunbi",
+    "university": "Thomas Adewumi University",
+    "team": "Team MedPatch",
+    "image": "samuel-medpatch.jpeg"
+  },
+  {
+    "name": "Prof. Tesleem Asafa",
+    "university": "LAUTECH, Ogbomoso",
+    "team": "Team AutoMed",
+    "image": "teslim-automed.jpeg"
+  },
+  {
+    "name": "Prof. Katrina Korb",
+    "university": "University of Jos",
+    "team": "Team Mindful Discipline",
+    "image": "korb-minfuldiscipline.jpeg"
+  },
+  {
+    "name": "Dr. Khadeejah Abdulsalam",
+    "university": "University of Lagos",
+    "team": "Team VivaMoms",
+    "image": "khadeeja-vivamoms.jpeg"
+  },
+  {
+    "name": "Prof. Chinedum Mgbemena",
+    "university": "FUPRE, Effurun",
+    "team": "Team SmartCare",
+    "image": "mbgemena-smart care.jpeg"
+  },
+  {
+    "name": "Dr. Kayode Oladapo",
+    "university": "McPherson University",
+    "team": "Team PAYG",
+    "image": "kayode-payg.jpeg"
+  },
+  {
+    "name": "Prof. Adeola Olumide",
+    "university": "University of Ibadan",
+    "team": "Team Pulse+",
+    "image": "olumide-pulse+.jpeg"
+  },
+  {
+    "name": "Prof. Frank Amadin",
+    "university": "UNIBEN",
+    "team": "Team ImagoAI",
+    "image": "frank-imago.jpeg"
+  },
+  {
+    "name": "Dr. Omolola Ogbolumani",
+    "university": "University of Lagos",
+    "team": "Team AidCare",
+    "image": "omolola-Aidcare.jpeg"
+  },
+  {
+    "name": "Dr. Margaret Ilomuanya",
+    "university": "University of Lagos",
+    "team": "Team PharmaCode",
+    "image": "margaret-pharmacode.jpeg"
+  },
+  {
+    "name": "Dr. Uloma Ubani-Ukoma",
+    "university": "University of Lagos",
+    "team": "Team ScriptSafe",
+    "image": "Ubani-ScriptSafe.jpeg"
+  },
+  {
+    "name": "Dr. Babatunde Akodu",
+    "university": "University of Lagos",
+    "team": "Team EmergiBridge",
+    "image": "Akodu-emergibridge.jpeg"
+  },
+  {
+    "name": "Dr. Taofik Afolabi",
+    "university": "UNIMED, Ondo",
+    "team": "Team RuralPhysio",
+    "image": "Afolabi-ruralphysio.jpeg"
+  },
+  {
+    "name": "Prof. Michael Olamoyegun",
+    "university": "LAUTECH",
+    "team": "Team AutoDetect",
+    "image": "olamoyegun-autodetect.jpeg"
+  }
+] 

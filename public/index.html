@@ -263,20 +263,12 @@
     ========================================= -->
     <section id="grand-finale" class="flyer-section py-5">
         <div class="container text-center">
-            <h2 class="section-title mb-4">
-                Grand Finale Announcement
-                <span>June 25, 2025 @ Old Great Hall, College of Medicine</span>
+            <h2 class="sub-section-title mb-4">
+                Our Grand Finale
             </h2>
-            
-            <!-- Flyer and buttons removed. Ready for new content. -->
         </div>
     </section>
 
-    <!-- Lightbox Overlay -->
-    <div id="lightbox" class="lightbox">
-        <span class="close-lightbox"></span>
-        <img class="lightbox-content" id="lightbox-img">
-    </div>
 
     <!-- ========================================
          FINALE DETAILS SECTION
@@ -337,6 +329,15 @@
                     <img src="images/innovators/collage-1.jpg" alt="Innovators Collage 1" class="innovator-collage">
                     <img src="images/innovators/collage-2.jpg" alt="Innovators Collage 2" class="innovator-collage">
                 </div>
+                
+                <!-- Mentors Gallery -->
+                <div class="mentors-section">
+                    <h4 class="mentors-title">Meet Our Mentors</h4>
+                    <div class="mentors-grid" id="mentorsGrid">
+                        <!-- Mentors will be dynamically loaded here -->
+                    </div>
+                </div>
+                
                 <div class="innovators-download">
                     <a href="downloads/Meet the Mentors.pdf" class="mentors-download-btn" download>
                         <i class="fas fa-file-pdf"></i>
@@ -443,140 +444,6 @@
 
 
         </div>
-    </section>
-
-    <!-- ========================================
-         GRAND FINALE MEDIA SECTION
-    ========================================= -->
-    <section class="grand-finale-media py-5">
-        <div class="container">
-            <div class="media-container">
-                <!-- Image Gallery Section -->
-                <div class="media-section gallery-section">
-                    <h3 class="media-title">
-                        <i class="fas fa-images"></i> Event Gallery
-                    </h3>
-                    <div class="stacked-gallery" id="grandFinaleGallery">
-                        <div class="gallery-stack" id="gallery-stack">
-                            <div class="stacked-image" style="--stack-index: 0;">
-                                <img src="images\gf-images\gf- (1).jpg" alt="Grand Finale Moment 1">
-                            </div>
-                            <div class="stacked-image" style="--stack-index: 1;">
-                                <img src="images\gf-images\gf- (2).jpg" alt="Grand Finale Moment 1">
-                            </div>
-                            <div class="stacked-image" style="--stack-index: 2;">
-                                <img src="images\gf-images\gf- (3).jpg" alt="Grand Finale Moment 1">
-                            </div>
-                            <div class="stacked-image" style="--stack-index: 3;">
-                                <img src="images\gf-images\gf- (4).jpg" alt="Grand Finale Moment 1">
-                            </div>
-                            <div class="stacked-image" style="--stack-index: 4;">
-                                <img src="images\gf-images\gf- (5).jpg" alt="Grand Finale Moment 1">
-                            </div>
-                        </div>
-                        <div class="gallery-overlay">
-                            <span class="gallery-count">+12 more</span>
-                            <span class="gallery-text">Click to view all photos</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Video Section -->
-                <div class="media-section video-section">
-                    <h3 class="media-title">
-                        <i class="fas fa-video"></i> Event Highlights
-                    </h3>
-                    <div class="video-preview" id="grandFinaleVideo">
-                        <div class="video-thumbnail-container">
-                            <img src="images/gf-images/important.jpg" alt="Event Video Preview" class="video-thumbnail">
-                            <div class="play-button">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <p class="video-description">Watch highlights from the Grand Finale event</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="image-gallery-modal" class="modal">
-            <div class="image-modal-content">
-                <span class="close-modal">&times;</span>
-                <h2><i class="fas fa-images"></i> Grand Finale Gallery</h2>
-                <div class="gallery-grid">
-                    
-                </div>
-            </div>
-        </div>
-
-        <div id="video-gallery-modal" class="modal">
-            <div class="video-modal-content">
-                <span class="close-modal">&times;</span>
-                <h2><i class="fas fa-video"></i> Grand Finale Videos</h2>
-                
-                <!-- Main Video Player Area -->
-                <div class="main-video-container" id="mainVideoContainer">
-                    <div class="main-video-placeholder">
-                        <i class="fas fa-play-circle"></i>
-                        <p>Click a video below to start watching</p>
-                    </div>
-                </div>
-                
-                <!-- Video Thumbnails Grid -->
-                <div class="video-gallery-grid" id="videoGalleryGrid">
-                    <!-- Video 1 -->
-                    <div class="video-card" data-ytid="YsqEBOSkRcY" data-title="Grand Finale Opening" data-description="Opening of the Grand Finale event">
-                        <div class="thumbnail-container">
-                            <img src="https://img.youtube.com/vi/YsqEBOSkRcY/maxresdefault.jpg" alt="Grand Finale Opening" class="video-thumbnail">
-                            <div class="play-overlay">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <span class="duration">11:35</span>
-                        </div>
-                        <div class="video-info">
-                            <span class="excerpt-badge">Video 1</span>
-                            <h4>Grand Finale Opening</h4>
-                            <p>Opening of the Grand Finale event</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Video 2 -->
-                    <div class="video-card" data-ytid="3EB8NIr1dWE" data-title="Guest Speaker's Session" data-description="Guest Speaker's Session">
-                        <div class="thumbnail-container">
-                            <img src="https://img.youtube.com/vi/3EB8NIr1dWE/maxresdefault.jpg" alt="Guest Speaker's Session" class="video-thumbnail">
-                            <div class="play-overlay">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <span class="duration">25:59</span>
-                        </div>
-                        <div class="video-info">
-                            <span class="excerpt-badge">Video 2</span>
-                            <h4>Guest Speaker's Session</h4>
-                            <p>Guest Speaker's Session</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Video 3 -->
-                    <div class="video-card" data-ytid="KLagWdnivD8" data-title="Team Pitches" data-description="Team Pitches">
-                        <div class="thumbnail-container">
-                            <img src="https://img.youtube.com/vi/KLagWdnivD8/maxresdefault.jpg" alt="Team Pitch" class="video-thumbnail">
-                            <div class="play-overlay">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <span class="duration">3 hours</span>
-                        </div>
-                        <div class="video-info">
-                            <span class="excerpt-badge">Video 3</span>
-                            <h4>Award Presentation</h4>
-                            <p>Award presentation ceremony</p>
-                        </div>
-                    </div>
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
     </section>
 
 
@@ -1650,6 +1517,145 @@
             </div>
         </div>
     </div>
+</section>
+
+<!-- ========================================
+     GRAND FINALE HIGHLIGHTS SECTION
+========================================= -->
+<section class="grand-finale-highlights py-5">
+    <div class="container">
+        <h2 class="section-title">
+            Grand Finale Highlights
+            <span>Event Gallery and Video Highlights</span>
+        </h2>
+        
+        <div class="media-container">
+            <!-- Image Gallery Section -->
+            <div class="media-section gallery-section">
+                <h3 class="media-title">
+                    <i class="fas fa-images"></i> Event Gallery
+                </h3>
+                <div class="stacked-gallery" id="grandFinaleGallery">
+                    <div class="gallery-stack" id="gallery-stack">
+                        <div class="stacked-image" style="--stack-index: 0;">
+                            <img src="images\gf-images\gf- (1).jpg" alt="Grand Finale Moment 1">
+                        </div>
+                        <div class="stacked-image" style="--stack-index: 1;">
+                            <img src="images\gf-images\gf- (2).jpg" alt="Grand Finale Moment 1">
+                        </div>
+                        <div class="stacked-image" style="--stack-index: 2;">
+                            <img src="images\gf-images\gf- (3).jpg" alt="Grand Finale Moment 1">
+                        </div>
+                        <div class="stacked-image" style="--stack-index: 3;">
+                            <img src="images\gf-images\gf- (4).jpg" alt="Grand Finale Moment 1">
+                        </div>
+                        <div class="stacked-image" style="--stack-index: 4;">
+                            <img src="images\gf-images\gf- (5).jpg" alt="Grand Finale Moment 1">
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-count">+12 more</span>
+                        <span class="gallery-text">Click to view all photos</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Section -->
+            <div class="media-section video-section">
+                <h3 class="media-title">
+                    <i class="fas fa-video"></i> Event Highlights
+                </h3>
+                <div class="video-preview" id="grandFinaleVideo">
+                    <div class="video-thumbnail-container">
+                        <img src="images/gf-images/important.jpg" alt="Event Video Preview" class="video-thumbnail">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <p class="video-description">Watch highlights from the Grand Finale event</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="image-gallery-modal" class="modal">
+        <div class="image-modal-content">
+            <span class="close-modal">&times;</span>
+            <h2><i class="fas fa-images"></i> Grand Finale Gallery</h2>
+            <div class="gallery-grid">
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="video-gallery-modal" class="modal">
+        <div class="video-modal-content">
+            <span class="close-modal">&times;</span>
+            <h2><i class="fas fa-video"></i> Grand Finale Videos</h2>
+            
+            <!-- Main Video Player Area -->
+            <div class="main-video-container" id="mainVideoContainer">
+                <div class="main-video-placeholder">
+                    <i class="fas fa-play-circle"></i>
+                    <p>Click a video below to start watching</p>
+                </div>
+            </div>
+            
+            <!-- Video Thumbnails Grid -->
+            <div class="video-gallery-grid" id="videoGalleryGrid">
+                <!-- Video 1 -->
+                <div class="video-card" data-ytid="YsqEBOSkRcY" data-title="Grand Finale Opening" data-description="Opening of the Grand Finale event">
+                    <div class="thumbnail-container">
+                        <img src="https://img.youtube.com/vi/YsqEBOSkRcY/maxresdefault.jpg" alt="Grand Finale Opening" class="video-thumbnail">
+                        <div class="play-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="duration">11:35</span>
+                    </div>
+                    <div class="video-info">
+                        <span class="excerpt-badge">Video 1</span>
+                        <h4>Grand Finale Opening</h4>
+                        <p>Opening of the Grand Finale event</p>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="video-card" data-ytid="3EB8NIr1dWE" data-title="Guest Speaker's Session" data-description="Guest Speaker's Session">
+                    <div class="thumbnail-container">
+                        <img src="https://img.youtube.com/vi/3EB8NIr1dWE/maxresdefault.jpg" alt="Guest Speaker's Session" class="video-thumbnail">
+                        <div class="play-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="duration">25:59</span>
+                    </div>
+                    <div class="video-info">
+                        <span class="excerpt-badge">Video 2</span>
+                        <h4>Guest Speaker's Session</h4>
+                        <p>Guest Speaker's Session</p>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="video-card" data-ytid="KLagWdnivD8" data-title="Team Pitches" data-description="Team Pitches">
+                    <div class="thumbnail-container">
+                        <img src="https://img.youtube.com/vi/KLagWdnivD8/maxresdefault.jpg" alt="Team Pitch" class="video-thumbnail">
+                        <div class="play-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="duration">3 hours</span>
+                    </div>
+                    <div class="video-info">
+                        <span class="excerpt-badge">Video 3</span>
+                        <h4>Award Presentation</h4>
+                        <p>Award presentation ceremony</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    
 </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

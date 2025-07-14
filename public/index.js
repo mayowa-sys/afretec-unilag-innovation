@@ -575,51 +575,104 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-document.querySelector('.click-to-enlarge').addEventListener('click', function() {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = this.src;
-    lightbox.style.display = 'flex';
-});
+// Lightbox functionality - only if elements exist
+const clickToEnlarge = document.querySelector('.click-to-enlarge');
+const closeLightbox = document.querySelector('.close-lightbox');
 
-document.querySelector('.close-lightbox').addEventListener('click', function() {
-    document.getElementById('lightbox').style.display = 'none';
-});
-
-function updateCountdown() {
-    const finaleDate = new Date('June 25, 2025 10:00:00 GMT+0100');
-    const now = new Date();
-    const diff = finaleDate - now;
-
-    if (diff <= 0) {
-        document.getElementById('countdown-bar').innerHTML = `
-            <div class="container text-center py-2">
-                <strong>THE GRAND FINALE IS HAPPENING NOW!</strong> 
-                <a href="#grand-finale" class="text-white">Click to view details →</a>
-            </div>
-        `;
-        return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    document.getElementById('days').textContent = days.toString().padStart(2, '0');
-    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+if (clickToEnlarge) {
+    clickToEnlarge.addEventListener('click', function() {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        if (lightbox && lightboxImg) {
+            lightboxImg.src = this.src;
+            lightbox.style.display = 'flex';
+        }
+    });
 }
 
-// Update every second
-updateCountdown();
-setInterval(updateCountdown, 1000);
+if (closeLightbox) {
+    closeLightbox.addEventListener('click', function() {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+}
 
-// Make the whole bar clickable
-document.getElementById('countdown-bar').addEventListener('click', function() {
-    window.location.href = '#grand-finale';
+// Load mentors immediately and on DOM ready
+loadMentors();
+
+// Also try on DOMContentLoaded as backup
+document.addEventListener('DOMContentLoaded', function() {
+    loadMentors();
 });
+
+// Remove countdown since event has passed
+function updateCountdown() {
+    // Countdown removed - event has passed
+    return;
+}
+
+function loadMentors() {
+    const mentorsGrid = document.getElementById('mentorsGrid');
+    
+    if (!mentorsGrid) {
+        console.log('Mentors grid not found');
+        return;
+    }
+    
+    // Dynamic backend URL
+    const backendUrl = window.location.origin;
+    
+    console.log('Loading mentors from:', `${backendUrl}/api/mentors`);
+    
+    // Fetch mentors from the backend
+    fetch(`${backendUrl}/api/mentors`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Mentors data received:', data);
+            
+            if (data.mentors && data.mentors.length > 0) {
+                renderMentors(data.mentors);
+            } else {
+                console.log('No mentors data available');
+                mentorsGrid.innerHTML = '<p style="text-align: center; color: #6c757d; grid-column: 1 / -1;">No mentors available at the moment.</p>';
+            }
+        })
+        .catch(error => {
+            console.error('Error loading mentors:', error);
+            mentorsGrid.innerHTML = '<p style="text-align: center; color: #dc3545; grid-column: 1 / -1;">Error loading mentors. Please try again later.</p>';
+        });
+}
+
+function renderMentors(mentors) {
+    const mentorsGrid = document.getElementById('mentorsGrid');
+    
+    const mentorsHTML = mentors.map(mentor => {
+        const imageUrl = mentor.imageUrl || 'images/organizers/download.png'; // Fallback image
+        
+        return `
+            <div class="mentor-item">
+                <div class="mentor-avatar">
+                    <img src="${imageUrl}" alt="${mentor.name}" onerror="this.src='images/organizers/download.png'">
+                </div>
+                <div class="mentor-name">${mentor.name}</div>
+                <div class="mentor-university">${mentor.university}</div>
+                <div class="mentor-team">${mentor.team}</div>
+            </div>
+        `;
+    }).join('');
+    
+    mentorsGrid.innerHTML = mentorsHTML;
+    console.log(`Rendered ${mentors.length} mentors`);
+}
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     // Grand Finale Gallery Modal
