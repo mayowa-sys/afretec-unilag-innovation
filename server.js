@@ -98,6 +98,10 @@ app.get('/api/teams', async (req, res) => {
     }
 });
 
+app.get('/ping', (req, res) => {
+  res.status(200).send('OK');
+});
+
 // Endpoint to get Grand Finale images
 app.get('/api/gf-images', (req, res) => {
     try {
@@ -195,3 +199,4 @@ app.use(express.static('public'));
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+
